@@ -143,15 +143,15 @@ miSQL.append(usuario.getNombre() + "', ").append(usuario.getApellido() +"',").ap
                 
 this.conn.ejecutarSQL(miSQL.toString());
 
-System.out.println("Registro Guardado...");
+//System.out.println("Registro Guardado...");
 
 }else if(usuario.getId()>0){//ACTUALIZAR ID MAYORES A 0
     
-System.out.println("Entramos...");
+//System.out.println("Entramos...");
     
 //MAS CODIGO AGREGADO
     
-StringBuilder miSQL = new StringBuilder();
+/*StringBuilder miSQL = new StringBuilder();
 miSQL.append("UPDATE tb_usuario SET id = ").append(usuario.getId());
 miSQL.append(", nombre =  '").append(usuario.getNombre());
 miSQL.append(", apellido =  '").append(usuario.getApellido());
@@ -163,15 +163,15 @@ miSQL.append(", estado =  '").append(usuario.getEstado());
 miSQL.append(", pregunta =  '").append(usuario.getPregunta());
 miSQL.append(", respuesta =  '").append(usuario.getRespuesta());
 miSQL.append(", fecha_registro =  '").append(usuario.getFecha_registro());
+*/
 
-
-miSQL.append(" WHERE id = ").append(usuario.getId()).append(";");
+//miSQL.append(" WHERE id = ").append(usuario.getId()).append(";");
                 
 //Invocar método para ejecutar la consulta.
-this.conn.ejecutarSQL(miSQL.toString());
+//this.conn.ejecutarSQL(miSQL.toString());
 
 //AQUI IRA UN SOUT
-System.out.println("Registro modificado correctamente!");
+//System.out.println("Registro modificado correctamente!");
 }
 //guardar =true;  //ESTO LO MODIFICAMOS
             

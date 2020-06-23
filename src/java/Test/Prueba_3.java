@@ -19,6 +19,7 @@ public static void main(String[] args) {
 Prueba_3 us = new Prueba_3();
 
 us.guardarUsuario();
+
 //us.editarUsuario();
 //us.listarUsuarios();
 //us.eliminarUsuario();
@@ -77,7 +78,7 @@ Usuario guardar_us = new Usuario();
 
 guardar_us.setNombre("William");
 
-guardar_us.setId(1);
+//guardar_us.setId(2);
 
 guardar_us.setApellido("Hernandez");
 guardar_us.setCorreo("willian123@gmail.com");
