@@ -89,7 +89,7 @@ guardar_pro.setStock(0);
 guardar_pro.setPrecio(2);
 guardar_pro.setUnidadMedida("Docena");
 guardar_pro.setEstado(1);
-guardar_pro.setCategoria(null);
+guardar_pro.setCategoria(null);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
 guardar_pro.setFecha_entrada(LocalDateTime.now());
 
 producto.guardarPro(guardar_pro);
@@ -103,6 +103,6 @@ producto.guardarPro(guardar_pro);
  public void eliminarProducto(){
 ProductoDAO producto = new ProductoDAOImplementar();
 
-producto.borrarPro(3);    //Se eliminará la categoria con id_categoria = 3;
+producto.borrarPro(3);    //Se eliminará la categoria con id_producto = 3;
 }
 }

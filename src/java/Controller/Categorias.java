@@ -32,7 +32,7 @@ session.setAttribute("lista", categoria.Listar()); //lista es el nombre de la va
 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Vistas-Categorias/listarCategorias.jsp");
 dispatcher.forward(request, response);
 
-//response.sendRedirect("/index.jsp");
+
 }
     
 protected void borrarCategoria(HttpServletRequest request, HttpServletResponse response)
@@ -55,10 +55,10 @@ response.setContentType("text/html;charset=UTF-8");
 @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
-//processRequest(request, response);
+
 //Se captura el parámetro que se esta enviando.
 String parametro = request.getParameter("opcion");
-//System.out.println(parametro);
+
         
 //Evaluar si el parámetro es crear o listar o cualquier otro.
         
