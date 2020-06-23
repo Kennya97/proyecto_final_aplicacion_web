@@ -22,8 +22,8 @@ Prueba_2 holis = new Prueba_2();
 //holis.editarProducto();
 //holis.guardarProducto();
 holis.listarProducto();
-holis.eliminarProducto();
-holis.listarProducto();
+//holis.eliminarProducto();
+//holis.listarProducto();
 
 }
 
@@ -90,7 +90,7 @@ guardar_pro.setPrecio(2);
 guardar_pro.setUnidadMedida("Docena");
 guardar_pro.setEstado(1);
 guardar_pro.setCategoria(null);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
-guardar_pro.setFecha_entrada(LocalDateTime.now());
+guardar_pro.setFecha_entrada("2020-06-23 16:13:45");
 
 producto.guardarPro(guardar_pro);
         

@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  */
 
 public class Producto {
-    
+ 
 private int id_producto;
 private String nom_producto;
 private String des_producto;
@@ -20,7 +20,7 @@ private float precio;
 private String unidadMedida;
 private int estado;
 private Categoria categoria;  //OBJETO CATEGORIA
-private LocalDateTime fecha_entrada;
+private String fecha_entrada ;
 
 public Producto() {
 this.id_producto = 0;
@@ -114,11 +114,11 @@ public Producto(int id_producto, String nom_producto, int categoria_id, float st
         this.categoria = categoria;
 }
     
-public LocalDateTime getFecha_entrada() {
+public String getFecha_entrada() {
 return fecha_entrada;
 }
 
-public void setFecha_entrada(LocalDateTime fecha_entrada) {
+public void setFecha_entrada(String fecha_entrada) {
         this.fecha_entrada = fecha_entrada;
 }
     

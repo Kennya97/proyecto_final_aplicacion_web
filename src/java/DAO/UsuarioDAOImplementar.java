@@ -5,9 +5,6 @@ import Factory.ConexionDB;
 import Factory.FactoryConexionDB;
 import Model.Usuario;
 import java.sql.ResultSet;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +55,7 @@ Usu.setTipo(resultadoSQL.getInt("tipo"));
 Usu.setEstado(resultadoSQL.getInt("estado"));
 Usu.setPregunta(resultadoSQL.getString("pregunta"));
 Usu.setRespuesta(resultadoSQL.getString("respuesta"));
-Usu.setFecha_registro(LocalDateTime.now());
+Usu.setFecha_registro(resultadoSQL.getString("fecha_registro"));
 
 lista.add(Usu); //Agregar al array cada registro encontrado.
 }
@@ -108,7 +105,7 @@ usuario.setTipo(resultadoSQL.getInt("tipo"));
 usuario.setEstado(resultadoSQL.getInt("estado"));
 usuario.setPregunta(resultadoSQL.getString("pregunta"));
 usuario.setRespuesta(resultadoSQL.getString("respuesta"));
-usuario.setFecha_registro(LocalDateTime.of(LocalDate.MIN, LocalTime.MIN));
+usuario.setFecha_registro(resultadoSQL.getString("fecha_registro"));
 
 }
 

@@ -55,7 +55,7 @@ producto.setPrecio(resultadoSQL.getFloat("precio"));
 producto.setUnidadMedida(resultadoSQL.getString("unidad_de_medida"));
 producto.setEstado(resultadoSQL.getInt("estado_producto"));
 producto.setCategoria(null); //AQUI NO PUDE PONER LO DE CATEGORIA AYUDA
-producto.setFecha_entrada(LocalDateTime.now());
+producto.setFecha_entrada(resultadoSQL.getString("fecha_entrada"));
 
 
 
@@ -107,8 +107,8 @@ producto.setStock(resultadoSQL.getFloat("stock"));
 producto.setPrecio(resultadoSQL.getFloat("precio"));
 producto.setUnidadMedida(resultadoSQL.getString("unidad_de_medida"));
 producto.setEstado(resultadoSQL.getInt("estado_producto"));
-producto.setCategoria(null); //AQUI NO PUDE PONER LO DE CATEGORIA AYUDA
-producto.setFecha_entrada(LocalDateTime.now());
+producto.setCategoria(null);//AQUI NO PUDE PONER LO DE CATEGORIA AYUDA
+producto.setFecha_entrada(resultadoSQL.getString("fecha_entrada"));
 
 
 }

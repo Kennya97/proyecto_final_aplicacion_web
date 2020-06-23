@@ -18,11 +18,11 @@ public class Prueba_3 {
 public static void main(String[] args) {
 Prueba_3 us = new Prueba_3();
 
-//us.guardarUsuario();
+us.guardarUsuario();
 //us.editarUsuario();
-us.listarUsuarios();
-us.eliminarUsuario();
-us.listarUsuarios();
+//us.listarUsuarios();
+//us.eliminarUsuario();
+//us.listarUsuarios();
 }
 //METODO PARA LISTAR LOS USUARIOS
 
@@ -87,7 +87,7 @@ guardar_us.setTipo(1);
 guardar_us.setEstado(1); //Estado 1.
 guardar_us.setPregunta("willian123");
 guardar_us.setRespuesta("willian");
-guardar_us.setFecha_registro(LocalDateTime.now());
+guardar_us.setFecha_registro("2020-06-23 16:08:15");
 
 usuario.guardarUsu(guardar_us);
         

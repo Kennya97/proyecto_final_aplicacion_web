@@ -19,7 +19,7 @@ private int tipo;
 private int estado;
 private String pregunta;
 private String respuesta;
-private LocalDateTime fecha_registro;
+private String fecha_registro;
 
 public Usuario() {
 this.id=0;
@@ -28,7 +28,7 @@ this.tipo=1;
 this.estado =1;
 }
 
-    public Usuario(int id, String nombre, String apellido, String correo, String usuario, String clave, int tipo, int estado, String pregunta, LocalDateTime fecha_registro) {
+    public Usuario(int id, String nombre, String apellido, String correo, String usuario, String clave, int tipo, int estado, String pregunta, String fecha_registro) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -38,7 +38,7 @@ this.estado =1;
         this.tipo = tipo;
         this.estado = estado;
         this.pregunta = pregunta;
-        this.fecha_registro = fecha_registro;
+        this.fecha_registro= fecha_registro;
     }
 
     public int getId() {
@@ -121,11 +121,11 @@ this.estado =1;
         this.respuesta = respuesta;
     }
 
-    public LocalDateTime getFecha_registro() {
+    public String getFecha_registro() {
         return fecha_registro;
     }
 
-    public void setFecha_registro(LocalDateTime fecha_registro) {
+    public void setFecha_registro(String fecha_registro) {
         this.fecha_registro = fecha_registro;
     }
 
