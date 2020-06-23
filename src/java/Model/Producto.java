@@ -1,6 +1,9 @@
 
 package Model;
 
+
+import java.time.LocalDateTime;
+
 /**
  *
  * @author castr
@@ -10,12 +13,14 @@ public class Producto {
     
 private int id_producto;
 private String nom_producto;
+private String des_producto;
 private int categoria_id;
 private float stock;
 private float precio;
 private String unidadMedida;
 private int estado;
 private Categoria categoria;  //OBJETO CATEGORIA
+private LocalDateTime fecha_entrada;
 
 public Producto() {
 this.id_producto = 0;
@@ -25,12 +30,14 @@ this.categoria = new Categoria(); //inicializamos el modelo categoria
 public Producto(int id_producto, String nom_producto, int categoria_id, float stock, float precio, String unidadMedida, int estado, Categoria categoria) {
         this.id_producto = id_producto;
         this.nom_producto = nom_producto;
+        this.des_producto =des_producto;
         this.categoria_id = categoria_id;
         this.stock = stock;
         this.precio = precio;
         this.unidadMedida = unidadMedida;
         this.estado = estado;
         this.categoria = categoria;
+        this.fecha_entrada= fecha_entrada;
 }
 
     public int getId_producto() {
@@ -48,6 +55,16 @@ public Producto(int id_producto, String nom_producto, int categoria_id, float st
     public void setNom_producto(String nom_producto) {
         this.nom_producto = nom_producto;
     }
+    
+    
+     public String getDes_producto() {
+        return des_producto;
+    }
+
+    public void setDes_producto(String des_producto) {
+        this.des_producto = des_producto;
+    }
+    
 
     public int getCategoria_id() {
         return categoria_id;
@@ -96,5 +113,15 @@ public Producto(int id_producto, String nom_producto, int categoria_id, float st
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
 }
+    
+public LocalDateTime getFecha_entrada() {
+return fecha_entrada;
+}
+
+public void setFecha_entrada(LocalDateTime fecha_entrada) {
+        this.fecha_entrada = fecha_entrada;
+}
+    
+   
 }
 

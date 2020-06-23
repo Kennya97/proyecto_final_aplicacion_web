@@ -66,7 +66,7 @@ throw new UnsupportedOperationException("Not supported yet."); //To change body 
 //METODO PARA EDITAR LA CATEGORIA
 @Override
 public Categoria editarCat(int id_cat_edit) {
- this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
 Categoria categoria = new Categoria();
 StringBuilder miSQL = new StringBuilder();
 //Agregar la consulta SQL.
@@ -97,7 +97,7 @@ return categoria;
 
 @Override
 public boolean guardarCat(Categoria categoria) {
- this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
      
 boolean guardar = false; //BANDERA DE RESULTADO
 try{
