@@ -4,9 +4,6 @@ package Test;
 import DAO.UsuarioDAO;
 import DAO.UsuarioDAOImplementar;
 import Model.Usuario;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 
 /**
@@ -21,7 +18,7 @@ Prueba_3 us = new Prueba_3();
 us.guardarUsuario();
 
 //us.editarUsuario();
-//us.listarUsuarios();
+us.listarUsuarios();
 //us.eliminarUsuario();
 //us.listarUsuarios();
 }
