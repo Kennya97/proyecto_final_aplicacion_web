@@ -93,20 +93,79 @@ return categoria;
 
 
 
-
+//METODO PARA GUARDAR CATEGORIA
 
 @Override
 public boolean guardarCat(Categoria categoria) {
- throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+     
+boolean guardar = false; //BANDERA DE RESULTADO
+try{
     
+if(categoria.getId_categoria() ==0){ //PARA CUANDO ES UNA NUEVA CATEGORIA
 
+StringBuilder miSQL = new StringBuilder();
+//AGREGA CONSULTA SQL EL ID_CATEGORIA ES AUTOINCREMNTABLE
 
+miSQL.append("INSERT INTO tb_categoria(nom_categoria, estado_categoria) VALUES (' ");
+miSQL.append(categoria.getNom_categoria() + "', ").append(categoria.getEstado_categoria());
+                miSQL.append(");");
+                
+                
+//Invocar método para ejecutar la consulta.
+                
+this.conn.ejecutarSQL(miSQL.toString());
 
+System.out.println("Registro Guardado...");
+
+}else if(categoria.getId_categoria()>0){//ACTUALIZAR ID MAYORES A 0
+    
+System.out.println("Entramos...");
+    
+//MAS CODIGO AGREGADO
+    
+StringBuilder miSQL = new StringBuilder();
+miSQL.append("UPDATE tb_categoria SET id_categoria = ").append(categoria.getId_categoria());
+miSQL.append(", nom_categoria =  '").append(categoria.getNom_categoria());
+miSQL.append("', estado_categoria =  ").append(categoria.getEstado_categoria());
+miSQL.append(" WHERE id_categoria = ").append(categoria.getId_categoria()).append(";");
+                
+//Invocar método para ejecutar la consulta.
+this.conn.ejecutarSQL(miSQL.toString());
+
+//AQUI IRA UN SOUT
+System.out.println("Registro modificado correctamente!");
+}
+//guardar =true;  //ESTO LO MODIFICAMOS
+            
+}catch(Exception e){
+            
+}finally{
+this.conn.cerrarConexion();
+}
+return guardar;
 }
 
-    @Override
-    public boolean borrarCat(int id_cat_borrar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+
+
+@Override
+public boolean borrarCat(int id_cat_borrar) {
+this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+boolean borrar = false;//Bandera de resultados
+try{
+StringBuilder miSQL = new StringBuilder();
+miSQL.append("DELETE FROM tb_categoria WHERE id_categoria = ").append(id_cat_borrar);
+this.conn.ejecutarSQL(miSQL.toString());
+borrar = true;
+}catch(Exception e){
+            
+}finally{
+this.conn.cerrarConexion();  //Cerrar la conexión.
+}
+return borrar;
+}
+    
+    
     
 }
