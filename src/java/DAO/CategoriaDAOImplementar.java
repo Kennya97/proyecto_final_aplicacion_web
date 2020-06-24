@@ -161,11 +161,8 @@ borrar = true;
 }catch(Exception e){
             
 }finally{
-this.conn.cerrarConexion();  //Cerrar la conexión.
-}
+    this.conn.cerrarConexion();  //Cerrar la conexión.
+     }
 return borrar;
-}
-    
-    
-    
+    }
 }
