@@ -44,7 +44,7 @@ for(Categoria categoriaListar: listar){
 public void editarCategoria(){
 CategoriaDAO categoria = new CategoriaDAOImplementar();
 Categoria cat_edit = categoria.editarCat(1);
-System.out.println("CATEGORIA A MODIFICAR");
+System.out.println("CATEGORIA A GUARDAR");
 System.out.println("ID: "+ cat_edit.getId_categoria() +
                                 "  NOMBRE: " + cat_edit.getNom_categoria() +
                                 "  ESTADO: " + cat_edit.getEstado_categoria());

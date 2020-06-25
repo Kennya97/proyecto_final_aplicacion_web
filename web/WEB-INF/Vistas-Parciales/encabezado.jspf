@@ -9,6 +9,7 @@ SISTEMA DE CONTROL DE INVENTARIO
 <a href="categorias?opcion=listar" class="btn btn-primary btn-sm" role="button">Categorias</a>
 <a href="productos?opcion=listar" class="btn btn-primary btn-sm" role="button">Productos</a>
 <a href="#" class="btn btn-primary btn-sm" role="button">Usuarios</a>
+<a href="index2" class="btn btn-primary btn-sm" role="button">Creadores</a>
         
 </div>
     

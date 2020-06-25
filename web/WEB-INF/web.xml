@@ -8,6 +8,10 @@
         <servlet-name>Categorias</servlet-name>
         <servlet-class>Controller.Categorias</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Index2</servlet-name>
+        <servlet-class>Controller.Index2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Categorias</servlet-name>
         <url-pattern>/categorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Index2</servlet-name>
+        <url-pattern>/index2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

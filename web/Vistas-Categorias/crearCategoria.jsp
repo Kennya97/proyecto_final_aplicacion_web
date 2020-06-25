@@ -49,7 +49,7 @@ location.href = url;
     
 <%@include file="../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
            
-<h3>Modificar Categorias</h3>
+<h3>CREAR NUEVA CATEGORIA</h3>
 <form class="form-horizontal" id="frmCategoria" name="frmCategoria" action="<%= request.getContextPath() %>/categorias" method="post">
 <input type="hidden" name="id_categoria" value="<%= id %>" >
             
