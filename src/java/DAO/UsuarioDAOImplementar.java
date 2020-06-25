@@ -133,7 +133,7 @@ if(usuario.getId() ==0){
 StringBuilder miSQL = new StringBuilder();
 //AGREGA CONSULTA SQL EL ID_CATEGORIA ES AUTOINCREMNTABLE
 
-miSQL.append("INSERT INTO tb_usuario(nombre,  apellido, correo, usuario, clave, tipo, estado, pregunta, respuesta, fecha_registro) VALUES (' ");
+miSQL.append("INSERT INTO tb_usuario(nombre,  apellido, correo, usuario, clave, tipo, estado, pregunta, respuesta, fecha_registro) VALUES ('");
 miSQL.append(usuario.getNombre() + "', ").append(usuario.getApellido() +"',").append(usuario.getCorreo()+"',")
         .append(usuario.getUsuario()+"',").append(usuario.getClave()+"',").append(usuario.getTipo()+"',").append
         (usuario.getEstado()+"',").append(usuario.getPregunta()+"',").append(usuario.getRespuesta()+"',").append(usuario.getFecha_registro());
