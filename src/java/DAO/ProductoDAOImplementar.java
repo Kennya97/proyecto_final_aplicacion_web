@@ -27,7 +27,8 @@ public ProductoDAOImplementar() {
 
 
 
-//METODO PARA LISTAR LOS PRODUCTOS 
+//METODO PARA LISTAR LOS PRODUCTOS
+//NO MODIFICAR NADA DE ESTE METODO POR FAVOOOOOOOOR
 @Override
 public List<Producto> Listar() {
 this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
@@ -54,7 +55,7 @@ producto.setStock(resultadoSQL.getFloat("stock"));
 producto.setPrecio(resultadoSQL.getFloat("precio"));
 producto.setUnidadMedida(resultadoSQL.getString("unidad_de_medida"));
 producto.setEstado(resultadoSQL.getInt("estado_producto"));
-producto.setCategoria(null); //AQUI NO PUDE PONER LO DE CATEGORIA AYUDA
+producto.setCategoria_id(resultadoSQL.getInt("categoria")); 
 producto.setFecha_entrada(resultadoSQL.getString("fecha_entrada"));
 
 
@@ -83,6 +84,8 @@ public List<Producto> Listar2() {
     
     
 //METODO PARA EDITAR 
+//POR FAVOR REVISAR ESTE METODO
+//ACA SI NECESITA MODIFICACIONES YA QUE NO SE EJECUTA A LA HORA DE ACTUALIZAR
 @Override
 public Producto editarPro(int id_pro_edit) {
     
@@ -107,7 +110,7 @@ producto.setStock(resultadoSQL.getFloat("stock"));
 producto.setPrecio(resultadoSQL.getFloat("precio"));
 producto.setUnidadMedida(resultadoSQL.getString("unidad_de_medida"));
 producto.setEstado(resultadoSQL.getInt("estado_producto"));
-producto.setCategoria(null);//AQUI NO PUDE PONER LO DE CATEGORIA AYUDA
+producto.setCategoria_id(resultadoSQL.getInt("categoria"));
 producto.setFecha_entrada(resultadoSQL.getString("fecha_entrada"));
 
 
@@ -124,7 +127,8 @@ return producto;
 
 
 //METODO PARA GUARDAR LOS PRODUCTOS
-
+//NECESITA MODIFICARSE NO SE EJECUTA A LA HORA DE GUARDAR
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 @Override
 public boolean guardarPro(Producto producto) {
 
@@ -134,17 +138,17 @@ public boolean guardarPro(Producto producto) {
 boolean guardar = false; //BANDERA DE RESULTADO
 try{
     
-if(producto.getId_producto() ==0){ //PARA CUANDO ES UN NUEVO PRODUCTO
+if(producto.getId_producto() == 0){ //PARA CUANDO ES UN NUEVO PRODUCTO
 
 StringBuilder miSQL = new StringBuilder();
 //AGREGA CONSULTA SQL EL ID_PRODUCTO  ES AUTOINCREMNTABLE
 
 //AQUI CREO QUE ESTA EL PROBLEMA LAS COMILLAS NOSE 
 
-miSQL.append("INSERT INTO tb_producto (nom_producto , des_producto, stock, precio, unidad_de_medida, estado_producto, categoria,  fecha_entrada ) VALUES (' ");
-miSQL.append(producto.getNom_producto() + " ', ").append(producto.getDes_producto()+" ',").append
-                        (producto.getStock()+ " ' ,").append(producto.getPrecio() +" ' ,").append(producto.getUnidadMedida() + " ', ").append
-                       (producto.getEstado() +" ', ").append(producto.getCategoria()+ " ',").append(producto.getFecha_entrada());
+miSQL.append("INSERT INTO tb_producto (nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, categoria, fecha_entrada ) VALUES('");
+miSQL.append(producto.getNom_producto() + "', ").append(producto.getDes_producto() + "', ").append
+                        (producto.getStock() + "' ,").append(producto.getPrecio() + "', ").append(producto.getUnidadMedida() + "', ").append
+                       (producto.getEstado() + "', ").append(producto.getCategoria()+ "', ").append(producto.getFecha_entrada());
                        miSQL.append(");");
                 
                 
@@ -168,7 +172,7 @@ miSQL.append("', stock =  ").append(producto.getStock());
 miSQL.append("', precio =  ").append(producto.getPrecio());
 miSQL.append("', unidad_de_medida =  ").append(producto.getUnidadMedida());
 miSQL.append("', estado_producto=  ").append(producto.getEstado());
-miSQL.append("',categoria=  ").append(producto.getCategoria());
+miSQL.append("',categoria=  ").append(producto.getCategoria_id());
 miSQL.append("', fecha_entrada=  ").append(producto.getFecha_entrada());
 
 miSQL.append(" WHERE id_producto = ").append(producto.getId_producto()).append(";");
@@ -191,7 +195,8 @@ return guardar;
 
 
 
-
+//METODO PARA ELIMINAR
+//>>>>>>>>>>>>>>>>>>>>POR FAVOR NO MODIFICAR NADA
 @Override
 public boolean borrarPro(int id_pro_borrar) {
     

@@ -4,6 +4,7 @@ package Controller;
 import DAO.ProductoDAO;
 import DAO.ProductoDAOImplementar;
 import Model.Producto;
+import Model.Categoria;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+//CONTROLADOR FUNCIONA
+//REVISAR UNICAMENTE LA VISTA DE GUARDAR
 
 public class Productos extends HttpServlet {
 
@@ -20,7 +23,7 @@ public class Productos extends HttpServlet {
         throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-//Crear instancia a CategoriaDAO
+//Crear instancia a ProductoDAO
 ProductoDAO producto = new ProductoDAOImplementar();
 //Crear instancia de sesión; se le da true para crear la sesión.
 
@@ -77,18 +80,19 @@ this.listaProductos(request, response);
             
 //Se efectua el casting o conversión de datos porque lo ingresado en el formulario es texto.
 int id_producto = Integer.parseInt(request.getParameter("id_pro"));
-String nombre_pro = request.getParameter("nombre_pro");
-String desc_pro = request.getParameter("descuento_pro");
-int id_catpro = Integer.parseInt(request.getParameter("cat_pro"));
-float stock_pro = Float.parseFloat(request.getParameter("stock_pro"));
-float precio_pro = Float.parseFloat(request.getParameter("precio_pro"));
-String unidad_pro = request.getParameter("unidad_pro");
-int estado_pro = Integer.parseInt(request.getParameter("estado_pro"));
-String fecha_pro = request.getParameter("fecha_pro");
+String nom_producto = request.getParameter("nom_pro");
+String des_producto = request.getParameter("desc_pro");
+float stock = Float.parseFloat(request.getParameter("stock_pro"));
+float precio = Float.parseFloat(request.getParameter("precio_pro"));
+String unidad_de_medida = request.getParameter("unidad_pro");
+int estado_producto = Integer.parseInt(request.getParameter("estado_pro"));
+int categoria = Integer.parseInt(request.getParameter("cat_pro"));
+String fecha_entrada = request.getParameter("fecha_pro");
 
-            
-String pagina = "/Vistas-Productos/crearProducto.jsp?id_p="+id_producto+"&&nombre_p="+nombre_pro+"&&descuento_p="+desc_pro+"&&idcat_p="+id_catpro+
-        "&&stock_p="+stock_pro+"&&precio_p="+precio_pro+"&&unidad_p="+unidad_pro+"&&estado_p="+estado_pro+"&&fecha_p="+fecha_pro+"&&senal=1";
+
+            //Revisar el orden de todo este bloque
+String pagina = "/Vistas-Productos/crearProducto.jsp?id_p="+id_producto+"&&nombre_p="+nom_producto+"&&desc_p="+des_producto+"&&stock_p="+stock+
+        "&&precio_p="+precio+"&&unidad_p="+unidad_de_medida+"&&estado_p="+estado_producto+"&&cat_p="+categoria+"&&fecha_p="+fecha_entrada+"&&senal=1";
 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
 dispatcher.forward(request, response);
             
@@ -113,27 +117,28 @@ Producto producto = new Producto();
 //Se efectua el casting o conversión de datos porque lo ingresado en el formulario es texto.
 
 int id_producto = Integer.parseInt(request.getParameter("id_producto"));
-String nombre_pro = request.getParameter("txtnombreproducto");
-String desc_pro = request.getParameter("txtdescuentoproducto");
-int id_catpro = Integer.parseInt(request.getParameter("txtidcatproducto"));
-float stock_pro = Float.parseFloat(request.getParameter("txtstockproducto"));
-float precio_pro = Float.parseFloat(request.getParameter("txtprecioproducto"));
-String unidad_pro = request.getParameter("txtunidadproducto");
-int estado_pro = Integer.parseInt(request.getParameter("txtestadoproducto"));
-String fecha_pro = request.getParameter("txtfechaproducto");
+String nom_producto = request.getParameter("txtNomProducto");
+String des_producto = request.getParameter("txtDesProducto");
+float stock = Float.parseFloat(request.getParameter("txtStockProducto"));
+float precio = Float.parseFloat(request.getParameter("txtPrecioProducto"));
+String unidad_de_medida = request.getParameter("txtUnidadProducto");
+int estado_producto = Integer.parseInt(request.getParameter("txtEstadoProducto"));
+int categoria = Integer.parseInt(request.getParameter("txtIdCategoria"));
+String fecha_entrada = request.getParameter("txtFechaProducto");
+
       
 producto.setId_producto(id_producto);
-producto.setNom_producto(nombre_pro);
-producto.setDes_producto(desc_pro);
-producto.setCategoria_id(id_catpro); //dudas con el valor de la llave foranea
-producto.setStock(stock_pro);
-producto.setPrecio(precio_pro);
-producto.setUnidadMedida(unidad_pro);
-producto.setEstado(estado_pro);
-producto.setFecha_entrada(fecha_pro);
+producto.setNom_producto(nom_producto);
+producto.setDes_producto(des_producto);
+producto.setStock(stock); //dudas con el valor de la llave foranea
+producto.setPrecio(precio);
+producto.setUnidadMedida(unidad_de_medida);
+producto.setEstado(estado_producto);
+producto.setCategoria_id(categoria);
+producto.setFecha_entrada(fecha_entrada);
 
 
-//IMPLEMEMENTAR LA CLASE CategoriaDAO
+//IMPLEMEMENTAR LA CLASE ProductoDAO
 
 ProductoDAO guardarProducto = new ProductoDAOImplementar();
 
