@@ -12,6 +12,10 @@
         <servlet-name>Index2</servlet-name>
         <servlet-class>Controller.Index2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReportePDF</servlet-name>
+        <servlet-class>Controller.ReportePDF</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Index2</servlet-name>
         <url-pattern>/index2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportePDF</servlet-name>
+        <url-pattern>/ReportePDF</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

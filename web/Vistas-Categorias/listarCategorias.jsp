@@ -27,6 +27,7 @@
 <!--<a href="#" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button">Nueva categoria</a>-->
 <br>
 <a href="<%= request.getContextPath() %>/categorias?opcion=crear" class="btn btn-success btn-group-sm" role="button">Nueva Categoria</a>
+<a href="<%= request.getContextPath() %>/ReportePDF?opcion=Categoria" class="btn btn-info btn-group-sm" role="button">PDF</a>
 <h3>Listado de Categorias Registradas</h3>
 <table class="table table-striped">
 
