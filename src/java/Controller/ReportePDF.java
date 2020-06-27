@@ -9,14 +9,20 @@ import DAO.CategoriaDAO;
 import DAO.CategoriaDAOImplementar;
 import DAO.ProductoDAO;
 import DAO.ProductoDAOImplementar;
+import DAO.UsuarioDAO;
+import DAO.UsuarioDAOImplementar;
 import Model.GenerarPDF;
 import static Model.GenerarPDF.Generar_PDF;
+import Model.Usuario;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.codec.Base64;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +44,7 @@ public class ReportePDF extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, DocumentException {
         String Opcion = request.getParameter("opcion");
         response.setContentType("application/PDF");
         OutputStream Salida = response.getOutputStream();
@@ -51,7 +57,12 @@ public class ReportePDF extends HttpServlet {
                 GenerarPDF.Generar_PDF(Salida, tanLaCategorias);
             }else if(Opcion.equalsIgnoreCase("Productos")){
                 ProductoDAO utilidaProductosDAO = new ProductoDAOImplementar();
-                
+                List tablaProducto = utilidaProductosDAO.Listar();
+                GenerarPDF.GeneraPDFProducto(Salida, tablaProducto);
+            }else if(Opcion.equalsIgnoreCase("Usuarios")){
+                UsuarioDAO utilidaUsuarioDAO = new UsuarioDAOImplementar();
+                List tablaUsuario = utilidaUsuarioDAO.Listar();
+                GenerarPDF.GeneraPDFUsuario(Salida, tablaUsuario);
             }
         }
 
@@ -69,7 +80,11 @@ public class ReportePDF extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (DocumentException ex) {
+            Logger.getLogger(ReportePDF.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -83,7 +98,11 @@ public class ReportePDF extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (DocumentException ex) {
+            Logger.getLogger(ReportePDF.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
