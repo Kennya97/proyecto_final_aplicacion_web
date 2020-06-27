@@ -26,15 +26,11 @@ public class Productos extends HttpServlet {
 //Crear instancia a ProductoDAO
 ProductoDAO producto = new ProductoDAOImplementar();
 //Crear instancia de sesión; se le da true para crear la sesión.
-
 HttpSession session = request.getSession(true);
-
 session.setAttribute("lista", producto.Listar()); //lista es el nombre de la variable de sesión.
 
 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Vistas-Productos/listarProductos.jsp");
 dispatcher.forward(request, response);
-
-
 }
     
 protected void borrarProducto(HttpServletRequest request, HttpServletResponse response)
@@ -81,7 +77,7 @@ this.listaProductos(request, response);
 //Se efectua el casting o conversión de datos porque lo ingresado en el formulario es texto.
 int id_producto = Integer.parseInt(request.getParameter("id_pro"));
 String nom_producto = request.getParameter("nom_pro");
-String des_producto = request.getParameter("desc_pro");
+String des_producto = request.getParameter("des_pro");
 float stock = Float.parseFloat(request.getParameter("stock_pro"));
 float precio = Float.parseFloat(request.getParameter("precio_pro"));
 String unidad_de_medida = request.getParameter("unidad_pro");
@@ -91,8 +87,7 @@ String fecha_entrada = request.getParameter("fecha_pro");
 
 
             //Revisar el orden de todo este bloque
-String pagina = "/Vistas-Productos/crearProducto.jsp?id_p="+id_producto+"&&nombre_p="+nom_producto+"&&desc_p="+des_producto+"&&stock_p="+stock+
-        "&&precio_p="+precio+"&&unidad_p="+unidad_de_medida+"&&estado_p="+estado_producto+"&&cat_p="+categoria+"&&fecha_p="+fecha_entrada+"&&senal=1";
+String pagina = "/Vistas-Productos/crearProducto.jsp?id_p="+id_producto+"&&nombre_p="+nom_producto+"&&desc_p="+des_producto+"&&stock_p="+stock+"&&precio_p="+precio+"&&unidad_p="+unidad_de_medida+"&&estado_p="+estado_producto+"&&cat_p="+categoria+"&&fecha_p="+fecha_entrada+"&&senal=1";
 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
 dispatcher.forward(request, response);
             

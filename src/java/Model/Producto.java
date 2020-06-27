@@ -20,7 +20,7 @@ private float precio;
 private String unidadMedida;
 private int estado;
 private Categoria categoria;  //OBJETO CATEGORIA
-private String fecha_entrada ;
+private String fecha_entrada;
 
 public Producto() {
 this.id_producto = 0;
@@ -121,7 +121,5 @@ return fecha_entrada;
 public void setFecha_entrada(String fecha_entrada) {
         this.fecha_entrada = fecha_entrada;
 }
-    
-   
 }
 

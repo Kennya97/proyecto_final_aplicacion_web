@@ -6,10 +6,6 @@ import Factory.FactoryConexionDB;
 import Model.Categoria;
 import Model.Producto;
 import java.sql.ResultSet;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -131,39 +127,29 @@ return producto;
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 @Override
 public boolean guardarPro(Producto producto) {
-
-    
  this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
      
 boolean guardar = false; //BANDERA DE RESULTADO
 try{
-    
 if(producto.getId_producto() == 0){ //PARA CUANDO ES UN NUEVO PRODUCTO
-
 StringBuilder miSQL = new StringBuilder();
 //AGREGA CONSULTA SQL EL ID_PRODUCTO  ES AUTOINCREMNTABLE
 
-//AQUI CREO QUE ESTA EL PROBLEMA LAS COMILLAS NOSE 
+//AQUI CREO QUE ESTA EL PROBLEMA 
 
-miSQL.append("INSERT INTO tb_producto (nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, categoria, fecha_entrada ) VALUES('");
-miSQL.append(producto.getNom_producto() + "', ").append(producto.getDes_producto() + "', ").append
-                        (producto.getStock() + "' ,").append(producto.getPrecio() + "', ").append(producto.getUnidadMedida() + "', ").append
-                       (producto.getEstado() + "', ").append(producto.getCategoria()+ "', ").append(producto.getFecha_entrada());
-                       miSQL.append(");");
-                
+miSQL.append("INSERT INTO tb_producto (nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, categoria, fecha_entrada) VALUES ('");
+miSQL.append(producto.getNom_producto() + "', ").append(producto.getDes_producto() + "', ").append(producto.getStock() 
+        + "', ").append(producto.getPrecio() + "', ").append(producto.getUnidadMedida() + "', ").append(producto.getEstado() 
+        + "', ").append(producto.getCategoria_id() + "', ").append(producto.getFecha_entrada());     
+miSQL.append(");");
                 
 //Invocar método para ejecutar la consulta.
-                
 this.conn.ejecutarSQL(miSQL.toString());
-
 System.out.println("Registro Guardado...");
 
 }else if(producto.getId_producto()>0){//ACTUALIZAR ID MAYORES A 0
-    
 System.out.println("Entramos...");
-    
 //MAS CODIGO AGREGADO
-
 StringBuilder miSQL = new StringBuilder();
 miSQL.append("UPDATE tb_producto SET id_producto = ").append(producto.getId_producto());
 miSQL.append(", nom_producto =  '").append(producto.getNom_producto());
@@ -171,10 +157,9 @@ miSQL.append("', des_producto =  ").append(producto.getDes_producto());
 miSQL.append("', stock =  ").append(producto.getStock());
 miSQL.append("', precio =  ").append(producto.getPrecio());
 miSQL.append("', unidad_de_medida =  ").append(producto.getUnidadMedida());
-miSQL.append("', estado_producto=  ").append(producto.getEstado());
-miSQL.append("',categoria=  ").append(producto.getCategoria_id());
-miSQL.append("', fecha_entrada=  ").append(producto.getFecha_entrada());
-
+miSQL.append("', estado_producto =  ").append(producto.getEstado());
+miSQL.append("', categoria =  ").append(producto.getCategoria_id());
+miSQL.append("', fecha_entrada =  ").append(producto.getFecha_entrada());
 miSQL.append(" WHERE id_producto = ").append(producto.getId_producto()).append(";");
           
 //Invocar método para ejecutar la consulta.

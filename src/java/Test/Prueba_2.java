@@ -20,7 +20,7 @@ Prueba_2 holis = new Prueba_2();
 
 
 //holis.editarProducto();
-//holis.guardarProducto();
+holis.guardarProducto();
 holis.listarProducto();
 //holis.eliminarProducto();
 //holis.listarProducto();
@@ -43,14 +43,14 @@ for(Producto productoListar: listar){
                                 "PRECIO: " + productoListar.getPrecio()+
                                 "UNIDAD DE MEDIDA: " + productoListar.getUnidadMedida()+
                                 "ESTADO PRODUCTO " + productoListar.getEstado()+
-                                "CATEGORIA PRODUCTO " + productoListar.getCategoria()+
+                                "CATEGORIA PRODUCTO " + productoListar.getCategoria_id()+
                                  "FECHA: "+productoListar.getFecha_entrada());
                                 
  //AQUI LO UNICO QUE NO ME MOSTRO AL EJECUTAR EL ID DE LA CATEGORIA A LA QUE PERTENECE ME APARECIO NULA  
 }
 }
 
-
+/*
 
 //METODO PARA EDITAR EL PRODUCTO
 public void editarProducto(){
@@ -69,7 +69,7 @@ System.out.println("ID: "+ pro_edit.getId_producto() +
 }
 
 
-
+*/
  
 //METODO PARA GUARDAR EL PRODUCTO EN ESTE TENGO PROBLEMAS 
 
@@ -82,15 +82,15 @@ Producto guardar_pro = new Producto();
 
 guardar_pro.setNom_producto("FLORES");
 
-guardar_pro.setId_producto(2);//ID_A MODIFICAR
+//guardar_pro.setId_producto(3);//ID_A MODIFICAR
 
 guardar_pro.setDes_producto("Muy bonitas"); //DESCRIPCION
-guardar_pro.setStock(0);
+guardar_pro.setStock(12);
 guardar_pro.setPrecio(2);
 guardar_pro.setUnidadMedida("Docena");
 guardar_pro.setEstado(1);
-guardar_pro.setCategoria(null);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
-guardar_pro.setFecha_entrada("2020-06-23 16:13:45");
+guardar_pro.setCategoria_id(10);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
+//guardar_pro.setFecha_entrada("2020-06-23 16:13:45");
 
 producto.guardarPro(guardar_pro);
         
@@ -99,10 +99,11 @@ producto.guardarPro(guardar_pro);
 
  //METODO ELIMINAR
  
-
+/*
  public void eliminarProducto(){
 ProductoDAO producto = new ProductoDAOImplementar();
 
 producto.borrarPro(3);    //Se eliminará la categoria con id_producto = 3;
 }
+ */
 }
