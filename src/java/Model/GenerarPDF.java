@@ -99,4 +99,8 @@ public class GenerarPDF {
         
     }
 
+    public static void GeneraPDFUsuario(OutputStream Salida, List tablaUsuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
