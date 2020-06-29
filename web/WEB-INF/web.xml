@@ -20,6 +20,10 @@
         <servlet-name>Productos</servlet-name>
         <servlet-class>Controller.Productos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Usuario</servlet-name>
+        <servlet-class>Controller.Usuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Productos</servlet-name>
         <url-pattern>/productos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Usuario</servlet-name>
+        <url-pattern>/Usuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
