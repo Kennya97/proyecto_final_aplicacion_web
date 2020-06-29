@@ -15,7 +15,8 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <a href="<%= request.getContextPath() %>/Usuario?opcion=crear" class="btn bg-success btn-sm glyphicon glyphicon-pencil" role="button"> Nuevo Producto</a>
+        <a href="<%= request.getContextPath() %>/Usuario?opcion=crear" class="btn bg-success btn-sm glyphicon glyphicon-pencil" role="button"> Nuevo Usuario</a>
+        <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Usuarios" class="btn btn-info btn-group-sm" role="button">PDF</a>
         <table>
             <thead>
                 <th>ID</th>
@@ -29,7 +30,8 @@
                 <th>PREGUNTA</th>
                 <th>RESPUESTA</th>
                 <th>REGRISTRO</th>
-                <th>ACCIONES</th>
+                <th>ACCIONES</th
+                
             </thead>
             <tbody>
                 <% 
