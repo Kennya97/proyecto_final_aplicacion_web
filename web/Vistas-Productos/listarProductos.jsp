@@ -25,7 +25,7 @@
                 <div class="col-lg-12 col-md-7 col-sm-3">
                     <div style="">
             <a href="<%= request.getContextPath() %>/productos?opcion=crear" class="btn bg-success btn-sm glyphicon glyphicon-pencil" role="button"> Nuevo Producto</a>
-            
+            <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Productos" class="btn btn-info btn-group-sm" role="button">PDF</a>
             <h3>Listado de Productos Registrados</h3>
         <table class="table table-striped table-hover">
             <tr>
