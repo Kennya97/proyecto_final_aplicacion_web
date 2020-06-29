@@ -1,7 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Controller;
+
 import DAO.UsuarioDAO;
 import DAO.UsuarioDAOImplementar;
-/*import Model.Usuario;*/
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -11,9 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author ADMIN
+ */
 public class Usuario extends HttpServlet {
 
-    protected void listaUsuarios(HttpServletRequest request, HttpServletResponse response)
+     protected void listaUsuarios(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
@@ -76,7 +85,7 @@ public class Usuario extends HttpServlet {
             String fecha_registro = request.getParameter("fecha_registro");
 
             //Revisar el orden de todo este bloque
-            String pagina = "/Vistas-Usuario/crearUsuario.jsp?id_p=" + id + "&&nombre=" + nombre + "&&apellido=" + apellido + "&&correo=" + correo + "&&usuario=" + usuario + "&&clave=" + clave + "&&tipo=" + tipo  + "&&estado=" + estado + "&&pregunta=" + pregunta  + "&&respuesta=" + respuesta +  "&&fecha_registro=" + fecha_registro + "&&senal=1";
+            String pagina = "/Vistas-Usuario/crearUsuario.jsp?id=" + id + "&&nombre=" + nombre + "&&apellido=" + apellido + "&&correo=" + correo + "&&usuario=" + usuario + "&&clave=" + clave + "&&tipo=" + tipo  + "&&estado=" + estado + "&&pregunta=" + pregunta  + "&&respuesta=" + respuesta +  "&&fecha_registro=" + fecha_registro + "&&senal=1";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
             dispatcher.forward(request, response);
 
@@ -133,5 +142,4 @@ public class Usuario extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
