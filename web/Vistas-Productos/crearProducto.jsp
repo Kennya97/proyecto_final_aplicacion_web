@@ -134,7 +134,7 @@ location.href = url;
 <div class="form-group">
 <label for="txtFechaProducto" class="col-sm-2 control-label">Fecha:</label>
 <div class="col-sm-10">
-<input type="text" class="form-control" name="txtFechaProducto" value="<%= fecha_pro %>">
+<input type="datetime-local" class="form-control" name="txtFechaProducto" value="<%= fecha_pro %>">
 </div>
 </div>
                 

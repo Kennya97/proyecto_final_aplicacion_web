@@ -114,7 +114,7 @@ public class GenerarPDF {
             documento.addSubject("muricion");
             documento.addTitle("ProyectoFinal");
             //se crea una pagina :3 
-            Paragraph titulo = new Paragraph(new Phrase("Registros de Categoria", FuenteSubtitulo));
+            Paragraph titulo = new Paragraph(new Phrase("Registros de Productos", FuenteSubtitulo));
             
             // Alinear
             titulo.setAlignment(Chunk.ALIGN_CENTER);
@@ -193,7 +193,7 @@ public class GenerarPDF {
             documento.addSubject("muricion");
             documento.addTitle("ProyectoFinal");
             //se crea una pagina :3 
-            Paragraph titulo = new Paragraph(new Phrase("Registros de Categoria", FuenteSubtitulo));
+            Paragraph titulo = new Paragraph(new Phrase("Registros de Usuarios", FuenteSubtitulo));
             
             // Alinear
             titulo.setAlignment(Chunk.ALIGN_CENTER);

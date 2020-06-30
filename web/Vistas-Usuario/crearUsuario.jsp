@@ -42,6 +42,8 @@ clave = Usuario.getClave();
 tipo = String.valueOf(Usuario.getTipo());
 estado = String.valueOf(Usuario.getEstado());
 pregunta = Usuario.getFecha_registro();
+respuesta=Usuario.getRespuesta();
+fecha_registro= Usuario.getFecha_registro();
 }
 %>
 <!DOCTYPE html>
@@ -57,24 +59,22 @@ pregunta = Usuario.getFecha_registro();
         <h3>CREAR NUEVO USUARIO</h3>
         
                  
-        <form class="form-horizontal" id="frmCategoria" name="frmCategoria" action="<%= request.getContextPath() %>/Usuario" method="post">
-        <input type="hidden" name="id_categoria" value="<%= id %>" >
-            
-        <div class="form-group">
-            <label for="txtNomUsuario" class="col-sm-2 control-label">Nombre:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="txtNomUsuario" value="<%= nombre %>" required>
-            </div>
-        </div>
-            
-        <div class="form-group">
-            <label for="txtApellUsuario" class="col-sm-2 control-label">Apellido:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="txtApellUsuario" value="<%= apellido %>" required>
-            </div>
-        </div>
+<form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="<%= request.getContextPath() %>/Usuario" method="post">
+<input type="hidden" name="id_usuario" value="<%= id %>" >
+<div class="form-group">
+<label for="txtNomUsuario" class="col-sm-2 control-label">Nombre:</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="txtNomUsuario" value="<%= nombre %>" required>
+</div>
+</div>
+<div class="form-group">
+<label for="txtApellUsuario" class="col-sm-2 control-label">Apellido:</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="txtApellUsuario" value="<%= apellido %>" required>
+</div>
+</div>
                 
-        <div class="form-group">
+<div class="form-group">
             <label for="txtcorrUsuario" class="col-sm-2 control-label">Correo:</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="txtcorrUsuario" value="<%= correo %>" required>
