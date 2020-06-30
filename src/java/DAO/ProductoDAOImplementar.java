@@ -69,10 +69,9 @@ return lista;
 }
 
     
-
 @Override
-public List<Producto> Listar2() {
- throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public List<Producto> Listar2() {     
+return null;
 }
 
     
@@ -141,11 +140,11 @@ public boolean guardarPro(Producto producto){
          //Agregar una consulta SQL el ID_Producto es auntoincremento 
          
          //Aqui creo esta el poblema 
-         miSQL.append("INSERT INTO tb_producto(nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, fecha_entrada)VALUES('");
-         miSQL.append(producto.getNom_producto() + "', ").append(producto.getDes_producto() + "',").append(producto.getStock() 
-                 + "',").append(producto.getPrecio() + "',").append(producto.getUnidadMedida() + "',").append(producto.getEstado() 
-                 + "',").append(producto.getCategoria_id() + "',").append(producto.getFecha_entrada());
-         miSQL.append(");");
+         miSQL.append("INSERT INTO tb_producto(nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, fecha_entrada) VALUES(");
+         miSQL.append(producto.getNom_producto() + ", ").append(producto.getDes_producto() + ", ").append(producto.getStock() 
+                 + ", ").append(producto.getPrecio() + ", ").append(producto.getUnidadMedida() + ", ").append(producto.getEstado() 
+                 + ", ").append(producto.getCategoria_id() + ", ").append(producto.getFecha_entrada());
+         miSQL.append(";");
          
          //Invocar metodo para ejecutar la consulta.
          this.conn.ejecutarSQL(miSQL.toString());

@@ -3,9 +3,11 @@
     Created on : 06-23-2020, 06:59:58 AM
     Author     : W. Hernandez
 --%>
+<%@page import="java.sql.ResultSet"%>
 <!--El desplegue de categoria, esta en la linea 115-->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-----Para importar los datos de la clase Producto------>
+<jsp:useBean id="cn" class="DAO.CategoriaDAOImplementar" scope="page"></jsp:useBean>
 <jsp:useBean id="producto" scope="session" class="Model.Producto"/>
 <jsp:useBean id="categoria" scope="session" class="Model.Categoria"/>
 
@@ -118,27 +120,17 @@ location.href = url;
 <input type="text" class="form-control" name="txtIdCategoria" value="<%= categoria_pro %>" required>
 </div>
 </div>
-<!--Aqui esta el despliegue lo comente porque al intentar guardar con este select tan error 500
-asi que,si van probar este select no borrer el input text txtIdCategoria,cuando termine de probar
-comentelo de nuevo,PD: Se supone que esto deberia ser una Arraylist pero esta solamente es una prueba
-de como se veria con el arraylist,bueno intente ver como se puede solucionar,ya me estoy preguntado 
-como se tendria que conectar la conexion del la bd para quede los datos de categoria pueda funcionar
-al momento de seleccionar en el producto,bueno eso es todo, y lo de comentar este select es para prevenir el error 500
-por eso lo deje asi..
-<select name="tb_categoria" id = "tb_categoria">
-      <option value="">Elige una opción</option>
-	<option value = "7">Leche </option>
-	<option value = "8">Carnes </option>
-        <option value = "9" >Frutas</option>
-        <option value = "10">Bebidas</option>
-        <option value = "12">Licores</option>
-        <option value = "13">Boquitas</option>
-        <option value = "15">Galletas</option>
-        <option value = "16">Limon</option>
+<select>
+<%
+            ResultSet rs = cn.mostrarCategoria();
+                    while(rs.next()){   
+                %>
+                <option value="<%=rs.getString("id_categoria")%>"><%=rs.getString("nom_categoria")%></option>
+           <%
+                    }       
+           %>
 </select>
-</div>
-</div>
--->
+
 <div class="form-group">
 <label for="txtFechaProducto" class="col-sm-2 control-label">Fecha:</label>
 <div class="col-sm-10">

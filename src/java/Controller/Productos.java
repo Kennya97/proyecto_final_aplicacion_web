@@ -48,7 +48,6 @@ throws ServletException, IOException {
 response.setContentType("text/html;charset=UTF-8");
         
 }
-
     
 @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response)

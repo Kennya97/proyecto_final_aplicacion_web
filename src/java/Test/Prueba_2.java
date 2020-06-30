@@ -44,7 +44,7 @@ for(Producto productoListar: listar){
                                 "UNIDAD DE MEDIDA: " + productoListar.getUnidadMedida()+
                                 "ESTADO PRODUCTO " + productoListar.getEstado()+
                                 "CATEGORIA PRODUCTO " + productoListar.getCategoria_id()+
-                                 "FECHA: "+productoListar.getFecha_entrada());
+                                "FECHA: "+productoListar.getFecha_entrada());
                                 
  //AQUI LO UNICO QUE NO ME MOSTRO AL EJECUTAR EL ID DE LA CATEGORIA A LA QUE PERTENECE ME APARECIO NULA  
 }
@@ -71,8 +71,7 @@ System.out.println("ID: "+ pro_edit.getId_producto() +
 
 */
  
-//METODO PARA GUARDAR EL PRODUCTO EN ESTE TENGO PROBLEMAS 
-
+//METODO PARA GUARDAR EL PRODUCTO EN ESTE TENGO PROBLEMAS
 
  public void guardarProducto(){
      
@@ -80,17 +79,17 @@ ProductoDAO producto = new ProductoDAOImplementar();
 
 Producto guardar_pro = new Producto();
 
-guardar_pro.setNom_producto("FLORES");
+guardar_pro.setNom_producto("Licuadora");
 
 //guardar_pro.setId_producto(3);//ID_A MODIFICAR
 
-guardar_pro.setDes_producto("Muy bonitas"); //DESCRIPCION
-guardar_pro.setStock(12);
-guardar_pro.setPrecio(2);
+guardar_pro.setDes_producto("Muy Grandes"); //DESCRIPCION
+guardar_pro.setStock(3);
+guardar_pro.setPrecio(1);
 guardar_pro.setUnidadMedida("Docena");
 guardar_pro.setEstado(1);
-guardar_pro.setCategoria_id(10);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
-//guardar_pro.setFecha_entrada("2020-06-23 16:13:45");
+guardar_pro.setCategoria_id(9);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
+guardar_pro.setFecha_entrada("12-12-2010");
 
 producto.guardarPro(guardar_pro);
         

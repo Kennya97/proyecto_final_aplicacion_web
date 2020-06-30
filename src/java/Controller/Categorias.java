@@ -65,7 +65,6 @@ String parametro = request.getParameter("opcion");
 if(parametro.equals("crear")){
             
 //Vista o formulario para registrar nueva categoria.
-            
 String pagina = "/Vistas-Categorias/crearCategoria.jsp";
 
 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
@@ -97,14 +96,10 @@ this.listaCategorias(request, response);
     
 @Override
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
- throws ServletException, IOException {
-  
-        
+ throws ServletException, IOException {        
 Categoria categoria = new Categoria();
 
-
 //Se efectua el casting o conversión de datos porque lo ingresado en el formulario es texto.
-
 int id_categoria = Integer.parseInt(request.getParameter("id_categoria"));
 String nom_categoria = request.getParameter("txtNomCategoria");
 int estado_categoria = Integer.parseInt(request.getParameter("txtEstadoCategoria"));
@@ -115,20 +110,15 @@ categoria.setEstado_categoria(estado_categoria);
 
 
 //IMPLEMEMENTAR LA CLASE CategoriaDAO
-
 CategoriaDAO guardarCategoria = new CategoriaDAOImplementar();
-
 guardarCategoria.guardarCat(categoria);
-        
 this.listaCategorias(request, response);
         
 }
-
     
 @Override
 public String getServletInfo() {
 return "Short description";
 }// </editor-fold>
-
 
 }

@@ -19,9 +19,7 @@ ConexionDB conn;  //Crear el objeto tipo conexión.
 public CategoriaDAOImplementar() {
 //Definir a la base de datos que se conectará por defecto.
       
-}
-    
-    
+} 
     
     
 //METODO PARA LISTAR LA CATEGORIA
@@ -61,6 +59,24 @@ return lista;
 public List<Categoria> Listar2() {
 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 }
+
+//Metodo para enlistar en select nombres de categoria
+public ResultSet mostrarCategoria(){
+        
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        //Bandera de resultados
+       
+            StringBuilder miSQL = new StringBuilder();
+            miSQL.append("SELECT id_categoria, nom_categoria FROM tb_categoria");
+           
+            
+            
+        ResultSet ResultSet = this.conn.consultaSQL(miSQL.toString());
+        
+        return ResultSet;
+        
+        
+   }  
 
 
 //METODO PARA EDITAR LA CATEGORIA

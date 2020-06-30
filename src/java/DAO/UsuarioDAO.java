@@ -1,7 +1,7 @@
 
 package DAO;
 
-import Model.Usuario;
+import Model.Usuarios;
 import java.util.List;
 
 /**
@@ -9,10 +9,10 @@ import java.util.List;
  * @author castr
  */
 public interface UsuarioDAO {
-public List<Usuario> Listar();
-public List<Usuario> Listar2();
-public Usuario editarUsu(int id_usu_edit);
-public boolean guardarUsu(Usuario usuario);
+public List<Usuarios> Listar();
+public List<Usuarios> Listar2();
+public Usuarios editarUsu(int id_usu_edit);
+public boolean guardarUsu(Usuarios usuario);
 public boolean borrarUsu(int id_usu_borrar);
  
 }
