@@ -86,7 +86,7 @@ int categoria = Integer.parseInt(request.getParameter("cat_pro"));
 String fecha_entrada = request.getParameter("fecha_pro");
 
 
-            //Revisar el orden de todo este bloque
+  //Revisar el orden de todo este bloque
 String pagina = "/Vistas-Productos/crearProducto.jsp?id_p="+id_producto+"&&nombre_p="+nom_producto+"&&desc_p="+des_producto+"&&stock_p="+stock+"&&precio_p="+precio+"&&unidad_p="+unidad_de_medida+"&&estado_p="+estado_producto+"&&cat_p="+categoria+"&&fecha_p="+fecha_entrada+"&&senal=1";
 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
 dispatcher.forward(request, response);

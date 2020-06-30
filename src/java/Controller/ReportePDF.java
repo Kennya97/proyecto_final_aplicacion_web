@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controller;
 
 import DAO.CategoriaDAO;
@@ -55,7 +51,7 @@ public class ReportePDF extends HttpServlet {
                 CategoriaDAO utilidadesCategoria = new CategoriaDAOImplementar();
                 List tanLaCategorias = utilidadesCategoria.Listar();
                 GenerarPDF.Generar_PDF(Salida, tanLaCategorias);
-            }else if(Opcion.equalsIgnoreCase("Productos")){
+            }else if(Opcion.equalsIgnoreCase("Producto")){
                 ProductoDAO utilidaProductosDAO = new ProductoDAOImplementar();
                 List tablaProducto = utilidaProductosDAO.Listar();
                 GenerarPDF.GeneraPDFProducto(Salida, tablaProducto);

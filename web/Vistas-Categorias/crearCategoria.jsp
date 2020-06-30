@@ -73,7 +73,7 @@ location.href = url;
 if(request.getParameter("senal")!=null){
 %>
 
-<input type="submit" class="btn btn-default btn-sm" name="btnModificar" value="Actualizar" />
+<input type="submit" class="btn btn-success btn-sm" name="btnModificar" value="Actualizar" />
 <%
  
 }else{   

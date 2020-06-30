@@ -66,7 +66,7 @@ fecha_pro = producto.getFecha_entrada();
     <div class="row">
        <div class="col-lg-8 col-md-6 col-sm-4">
            
-           <h3 class="alert-primary">Modificar Productos</h3>
+           <h3 class="alert-primary">Nuevo Producto</h3>
             <form class="form-horizontal" id="frmProducto" name="frmProducto" action="<%= request.getContextPath() %>/productos" method="post">
 <input type="hidden" name="id_producto" value="<%= id %>" >
             
@@ -116,6 +116,8 @@ fecha_pro = producto.getFecha_entrada();
 <label for="txtIdCategoria" class="col-sm-2 control-label">Categoria:</label>
 <div class="col-sm-10">
 <input type="text" class="form-control" name="txtIdCategoria" value="<%= categoria_pro %>" required>
+</div>
+</div>
 <!--Aqui esta el despliegue lo comente porque al intentar guardar con este select tan error 500
 asi que,si van probar este select no borrer el input text txtIdCategoria,cuando termine de probar
 comentelo de nuevo,PD: Se supone que esto deberia ser una Arraylist pero esta solamente es una prueba
@@ -150,7 +152,7 @@ por eso lo deje asi..
 if(request.getParameter("senal")!=null){
 %>
 
-<input type="submit" class="btn btn-default btn-sm" name="btnModificar" value="Actualizar" />
+<input type="submit" class="btn btn-primary btn-sm" name="btnModificar" value="Actualizar" />
 <%
  
 }else{   
@@ -165,14 +167,12 @@ name="btnRegresar" value="Regresar" />
 </div>
 </div>   
 </form>
-
-                     
-      </div>
-   </div>
 </div>
-    
-                        
-                    <%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>
+</div>
+</div>
+
+              
+<%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>
     </body>
 </html>
 

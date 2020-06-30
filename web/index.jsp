@@ -19,7 +19,7 @@
 <body>
     
  <!-- Vistar parciales de la parte superior de nuestra aplicación -->
-<%@include file="WEB-INF/Vistas-Parciales/encabezado.jspf"%>
+<%@include file="WEB-INF/Vistas-Parciales/encabezado2.jspf"%>
 
 <!-- Todo el contenido de la aplicación -->
 <h3>¡BIENVENID@S!</h3>

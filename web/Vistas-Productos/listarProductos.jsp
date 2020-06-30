@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import = "Model.Producto" %> <!----Importar el modelo------>
+
 <!--------POR FAVOR NO TOCAR NADA-------->
 <!-------VISTA TOTALMENTE FUNCIONAL---------->
 
@@ -18,18 +19,18 @@
         <%@include file = "../WEB-INF/Vistas-Parciales/css-js.jspf" %>  
     </head>
     <body>
-        <%@include file = "../WEB-INF/Vistas-Parciales/encabezado.jspf" %>  
+        <%@include file = "../WEB-INF/Vistas-Parciales/encabezado2.jspf" %>  
         
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-7 col-sm-3">
                     <div style="">
-            <a href="<%= request.getContextPath() %>/productos?opcion=crear" class="btn bg-success btn-sm glyphicon glyphicon-pencil" role="button"> Nuevo Producto</a>
+            <a href="<%= request.getContextPath() %>/productos?opcion=crear" class="btn bg-success btn-sm" role="button"> Nuevo Producto</a>
             <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Productos" class="btn btn-info btn-group-sm" role="button">PDF</a>
             <h3>Listado de Productos Registrados</h3>
         <table class="table table-striped table-hover">
             <tr>
-                <th>ID</th><th>Nombre</th><th>Descuento</th><th>Stock</th><th>Precio</th><th>Medida</th><th>Estado</th><th>Categoria</th><th>Fecha Entrada</th><th>Acción</th>
+                <th>ID</th><th>Nombre</th><th>Descripción</th><th>Stock</th><th>Precio</th><th>Medida</th><th>Estado</th><th>Categoría</th><th>Fecha Entrada</th><th>Acción</th>
             </tr>
             <%
                 for (int i = 0; i < lista.size(); i++) {
@@ -51,7 +52,7 @@
                     <!-------Boton para invocar metodo editar------>
                     <a href="<%= request.getContextPath() %>/productos?opcion=modificar&&id_pro=<%= producto.getId_producto()%>&&nom_pro=<%= producto.getNom_producto()%>&&des_pro=<%= producto.getDes_producto()%>&&stock_pro=<%= producto.getStock()%>&&precio_pro=<%= producto.getPrecio()%>
                        &&unidad_pro=<%= producto.getUnidadMedida()%>&&estado_pro=<%= producto.getEstado()%>&&cat_pro=<%= producto.getCategoria_id()%>&&fecha_pro=<%= producto.getFecha_entrada()%>" 
-                       class="btn btn-primary btn-sm glyphicon glyphicon-edit" role="button" name="btnmodi"> Editar</a>
+                       class="btn btn-warning btn-sm glyphicon glyphicon-edit" role="button" name="btnmodi"> Editar</a>
                     
                        <!------Boton para el metodo eliminar------>
                        <a href="<%= request.getContextPath() %>/productos?opcion=eliminar&&id=<%= producto.getId_producto()%>" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button"> Eliminar</a>
@@ -75,9 +76,6 @@
         </div>
     </div>
  </div>
-        
-       
-        <br>
-        <%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>  
-    </body>
+<%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>  
+</body>
 </html>

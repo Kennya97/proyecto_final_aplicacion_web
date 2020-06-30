@@ -1,17 +1,30 @@
 .encabezado{
-background: #286090;
+font-family: cursive;
+background: #d43f3a;
 color: #fff;
-font-size: 20px;
-height:40px;
+font-size: 30px;
+height:60px;
+}
+.encabezado2{
+    
+font-family: cursive;
+background: #000;
+color: #fff;
+font-size: 30px;
+height:60px;
+    
+    
 }
 
 .contenido{
-padding: 0px;
+padding: 15px;
+background: #FAFAFA;
 }
 .pie{
-background: #9d9d9d;
+background: #616161;
 color:#fff;
-height: 36px;
+height: 46px;
 padding: 10px;
 text-align: center;
+font-family: sans-serif;
 }
