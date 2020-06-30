@@ -52,15 +52,15 @@ fecha_pro = producto.getFecha_entrada();
         <title>Control de inventario</title>
         <%@include file = "../WEB-INF/Vistas-Parciales/css-js.jspf" %>
         
-        <script type="text/javascript">
-            function regresar(url){ //Funcion para el boton regresar
-                location.href = url;
-            }
-        </script>
+<script type="text/javascript">
+function regresar(url){ //Funcion para el boton regresar
+location.href = url;
+}
+</script>
         
-    </head>
-    <body>
-        <%@include file = "../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
+</head>
+<body>
+<%@include file = "../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
         
  <div class="container">
     <div class="row">

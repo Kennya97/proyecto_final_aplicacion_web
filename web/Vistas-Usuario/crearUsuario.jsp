@@ -136,7 +136,7 @@ pregunta = Usuario.getFecha_registro();
                 if(request.getParameter("senal")!=null){
             %>
 
-            <input type="submit" class="btn btn-default btn-sm" name="btnModificar" value="Actualizar" />
+            <input type="submit" class="btn btn-primary btn-sm" name="btnModificar" value="Actualizar" />
             <%
  
             }else{   

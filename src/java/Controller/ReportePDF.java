@@ -41,17 +41,16 @@ public class ReportePDF extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, DocumentException {
-        String Opcion = request.getParameter("opcion");
-        response.setContentType("application/PDF");
+    String Opcion = request.getParameter("opcion");
+       response.setContentType("application/PDF");
         OutputStream Salida = response.getOutputStream();
         //si opcion es diferente de vacio 
         if(Opcion != null){
             if(Opcion.equalsIgnoreCase("Categoria")){
-
                 CategoriaDAO utilidadesCategoria = new CategoriaDAOImplementar();
                 List tanLaCategorias = utilidadesCategoria.Listar();
                 GenerarPDF.Generar_PDF(Salida, tanLaCategorias);
-            }else if(Opcion.equalsIgnoreCase("Producto")){
+            }else if(Opcion.equalsIgnoreCase("Productos")){
                 ProductoDAO utilidaProductosDAO = new ProductoDAOImplementar();
                 List tablaProducto = utilidaProductosDAO.Listar();
                 GenerarPDF.GeneraPDFProducto(Salida, tablaProducto);
