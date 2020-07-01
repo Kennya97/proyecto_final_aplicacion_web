@@ -227,7 +227,7 @@ public class GenerarPDF {
             tablaRegistro.setHeaderRows(1);
             // Rellenar
             for(int i = 0; i < tablaUsuario.size(); i++){
-                Usuarios usuario = (Usuarios) tablaUsuario.get(i);
+                Usuario usuario = (Usuario) tablaUsuario.get(i);
                 PdfPCell Cuerpo = new PdfPCell();
                 Cuerpo.setHorizontalAlignment(Element.ALIGN_CENTER);
                 Cuerpo.setPhrase(new Paragraph(usuario.getNombre(),FuenteMiniHormiga));

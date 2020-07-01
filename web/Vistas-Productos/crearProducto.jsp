@@ -117,9 +117,6 @@ location.href = url;
 <div class="form-group">
 <label for="txtIdCategoria" class="col-sm-2 control-label">Categoria:</label>
 <div class="col-sm-10">
-<input type="text" class="form-control" name="txtIdCategoria" value="<%= categoria_pro %>" required>
-</div>
-</div>
 <select>
 <%
             ResultSet rs = cn.mostrarCategoria();
@@ -130,6 +127,9 @@ location.href = url;
                     }       
            %>
 </select>
+</div>
+</div>
+
 
 <div class="form-group">
 <label for="txtFechaProducto" class="col-sm-2 control-label">Fecha:</label>

@@ -3,7 +3,7 @@ package Test;
 
 import DAO.UsuarioDAO;
 import DAO.UsuarioDAOImplementar;
-import Model.Usuarios;
+import Model.Usuario;
 import java.util.List;
 
 /**
@@ -26,9 +26,9 @@ us.listarUsuarios();
 
 public void listarUsuarios(){
 UsuarioDAO usuarios = new UsuarioDAOImplementar();
-List<Usuarios> listar = usuarios.Listar();
+List<Usuario> listar = usuarios.Listar();
 System.out.println("LISTADO DE USUARIOS");
-for(Usuarios usuarioListar: listar){
+for(Usuario usuarioListar: listar){
  System.out.println("ID: "+ usuarioListar.getId() +
                                 "NOMBRE: " + usuarioListar.getNombre() +
                                 "APELLIDO : " + usuarioListar.getApellido()+
@@ -49,7 +49,7 @@ for(Usuarios usuarioListar: listar){
 
 public void editarUsuario(){
 UsuarioDAO usuario = new UsuarioDAOImplementar();
-Usuarios us_edit = usuario.editarUsu(1);
+Usuario us_edit = usuario.editarUsu(1);
 
 System.out.println("USUARIO A MODIFICAR");
 System.out.println("ID: "+ us_edit.getId() +
@@ -71,7 +71,7 @@ System.out.println("ID: "+ us_edit.getId() +
      
 UsuarioDAO usuario = new UsuarioDAOImplementar();
 
-Usuarios guardar_us = new Usuarios();
+Usuario guardar_us = new Usuario();
 
 guardar_us.setNombre("William");
 

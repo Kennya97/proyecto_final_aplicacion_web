@@ -12,6 +12,9 @@
 
 <!-----El id debe ser el mismo que se le coloco de nombre a la sesion en el controlador----->
 <jsp:useBean id="lista" scope="session" class="java.util.List"/>
+<jsp:useBean id="categoria" scope="session" class="Model.Categoria"/>
+<jsp:useBean id="cn" class="DAO.CategoriaDAOImplementar" scope="page"></jsp:useBean>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
