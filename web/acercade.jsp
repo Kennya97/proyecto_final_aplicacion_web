@@ -19,7 +19,7 @@
 <body style="background-color: #f8f8f8">
     
  <!-- Vistar parciales de la parte superior de nuestra aplicación -->
-<%@include file="WEB-INF/Vistas-Parciales/encabezado.jspf"%>
+<%@include file="WEB-INF/Vistas-Parciales/encabezado2.jspf"%>
 
 <!-- Todo el contenido de la aplicación -->
 <center>
@@ -65,7 +65,7 @@ Modulo:Aplicación de metodologías ágiles y testeo de software.
 <div class="col-mg-4">
 <img class="img-circle" src="img/Willian.jpg" alt="Generic placeholder image" width="140" height="140">
 <h2>WILLIAN ADALBERTO HERNÁNDEZ AQUINO</h2>
-<p class="lead" style=" font-family: 25px">Carnet: 184219<br>
+<p class="lead" style=" font-family: 25px">Carnet: 184219.<br>
 Grupo: Sistema 21 "A".<br>
 Modulo:Aplicación de metodologías ágiles y testeo de software.
 </p>
