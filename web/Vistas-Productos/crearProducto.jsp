@@ -117,7 +117,8 @@ location.href = url;
 <div class="form-group">
 <label for="txtIdCategoria" class="col-sm-2 control-label">Categoria:</label>
 <div class="col-sm-10">
-<select>
+    <select name="txtIdCategoria">
+        <option value="<%=categoria_pro%>">Categorias</option>
 <%
             ResultSet rs = cn.mostrarCategoria();
                     while(rs.next()){   

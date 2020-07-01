@@ -6,14 +6,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import = "Model.Producto" %> <!----Importar el modelo------>
+<%@page import = "Model.Categoria" %> <!----Importar el modelo------>
 
-<!--------POR FAVOR NO TOCAR NADA-------->
 <!-------VISTA TOTALMENTE FUNCIONAL---------->
-
 <!-----El id debe ser el mismo que se le coloco de nombre a la sesion en el controlador----->
 <jsp:useBean id="lista" scope="session" class="java.util.List"/>
 <jsp:useBean id="categoria" scope="session" class="Model.Categoria"/>
-<jsp:useBean id="cn" class="DAO.CategoriaDAOImplementar" scope="page"></jsp:useBean>
 
 <html>
     <head>

@@ -5,7 +5,11 @@ import Factory.ConexionDB;
 import Factory.FactoryConexionDB;
 import Model.Categoria;
 import Model.Producto;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -119,11 +123,6 @@ return producto;
 }
 
 
-
-
-//METODO PARA GUARDAR LOS PRODUCTOS
-//NECESITA MODIFICARSE NO SE EJECUTA A LA HORA DE GUARDAR
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 @Override
 public boolean guardarPro(Producto producto){
  this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
@@ -186,7 +185,6 @@ public boolean guardarPro(Producto producto){
 }
 
 //METODO PARA ELIMINAR
-//>>>>>>>>>>>>>>>>>>>>POR FAVOR NO MODIFICAR NADA
 @Override
 public boolean borrarPro(int id_pro_borrar) {
     
@@ -208,5 +206,40 @@ this.conn.cerrarConexion();  //Cerrar la conexión.
        
 return borrar;
 }
+
+    @Override
+    public boolean guardarproduc(Producto producto) {
+         boolean guardar = false;
+       try{
+        if(producto.getId_producto() == 0){
+            
+        Connection miConexcion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_inventario?zeroDateTimeBehavior=convertToNull", "root", "");
+        
+                
+            String sSQL = "INSERT INTO tb_producto"
+            + "(nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, categoria, fecha_entrada)" 
+            + " VALUES (?,?,?,?,?,?,?,?);";
+
+           PreparedStatement preparedStatement = (PreparedStatement) miConexcion.prepareStatement(sSQL);
+            
+            preparedStatement.setString(1, producto.getNom_producto());
+            preparedStatement.setString(2, producto.getDes_producto());
+            preparedStatement.setFloat(3, producto.getStock());
+            preparedStatement.setFloat(4, producto.getPrecio());
+            preparedStatement.setString(5, producto.getUnidadMedida());
+            preparedStatement.setInt(6, producto.getEstado());
+            preparedStatement.setInt(7, producto.getCategoria_id());
+            preparedStatement.setString(8, producto.getFecha_entrada());
+             
+           preparedStatement.executeUpdate();
+        }
+           } catch (SQLException ex) {
+            ex.getMessage();
+            
+        }
+       
+        return guardar;
+
+    }
 }
     
