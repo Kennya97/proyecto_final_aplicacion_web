@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//Conexio 
 public class Conexion {
     Connection con;
     public Connection getConnection(){
