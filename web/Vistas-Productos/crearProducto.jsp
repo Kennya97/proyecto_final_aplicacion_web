@@ -65,10 +65,14 @@ location.href = url;
 <%@include file = "../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
         
  <div class="container">
-    <div class="row">
-       <div class="col-lg-8 col-md-6 col-sm-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-10 col-sm-10">
            
+                <br>
+           <center>
            <h3 class="alert-primary">Nuevo Producto</h3>
+           </center>
+                    
             <form class="form-horizontal" id="frmProducto" name="frmProducto" action="<%= request.getContextPath() %>/productos" method="post">
 <input type="hidden" name="id_producto" value="<%= id %>" >
             
@@ -118,7 +122,7 @@ location.href = url;
 <label for="txtIdCategoria" class="col-sm-2 control-label">Categoria:</label>
 <div class="col-sm-10">
     <select name="txtIdCategoria">
-        <option value="<%=categoria_pro%>">Categorias</option>
+        <option value="<%=categoria_pro%>">Elige una categoria</option>
 <%
             ResultSet rs = cn.mostrarCategoria();
                     while(rs.next()){   
