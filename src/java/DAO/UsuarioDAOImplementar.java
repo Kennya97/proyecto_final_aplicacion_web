@@ -3,8 +3,12 @@ package DAO;
 
 import Factory.ConexionDB;
 import Factory.FactoryConexionDB;
+import Model.Conexion;
 import Model.Usuario;
+import Model.Validar;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +19,9 @@ import java.util.List;
 public class UsuarioDAOImplementar implements UsuarioDAO {
 
 ConexionDB conn;  //Crear el objeto tipo conexión.
+Conexion cn = new Conexion();
+PreparedStatement ps;
+ResultSet rs;
 
 public UsuarioDAOImplementar() {
     
@@ -201,8 +208,24 @@ borrar = true;
 this.conn.cerrarConexion();  //Cerrar la conexión.
 }
 return borrar;
-}
+} 
     
     
-    
+@Override
+ public int validar(Usuario usu) throws SQLException{
+    String sql = "Select nombre , correo from tb_usuario where nombre = '"+ usu.getNombre() +"' AND correo = '" + usu.getCorreo() + "' ";
+    this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+    int estado;
+    rs = conn.consultaSQL(sql);
+    rs.next();
+    Usuario resulUs = new Usuario();
+    resulUs.setNombre(rs.getString("nombre"));
+    resulUs.setCorreo(rs.getString("correo"));
+       if(resulUs.getNombre().equalsIgnoreCase("")){
+            estado = 0;
+        }else{
+            estado = 1;
+        }
+    return estado;
+  }
 }
