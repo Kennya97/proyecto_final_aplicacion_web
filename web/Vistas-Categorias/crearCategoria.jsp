@@ -48,59 +48,46 @@ location.href = url;
 <body>
     
 <%@include file="../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
- 
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 col-md-10 col-sm-10"> 
-
-                <br>
-                <center>
-        <h3>CREAR NUEVA CATEGORIA</h3>
-        </center>
-        
-        <form class="form-horizontal" id="frmCategoria" name="frmCategoria" action="<%= request.getContextPath() %>/categorias" method="post">
-        <input type="hidden" name="id_categoria" value="<%= id %>" >
-
-        <div class="form-group">
-        <label for="txtNomCategoria" class="col-sm-2 control-label">Nombre:</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" name="txtNomCategoria" value="<%= nombre_cat %>" required>
-        </div>
-        </div>
-
-        <div class="form-group">
-        <label for="txtEstadoCategoria" class="col-sm-2 control-label">Estado:</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" name="txtEstadoCategoria" value="<%= estado_cat %>" required>
-        </div>
-        </div>
-
-        <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-        <%
-        if(request.getParameter("senal")!=null){
-        %>
-
-        <input type="submit" class="btn btn-success btn-sm" name="btnModificar" value="Actualizar" />
-        <%
-
-        }else{   
-
-        %>    
-        <input type="submit" class="btn btn-success btn-sm" name="btnGuardar" value="Guardar" />
-        <%
-        }  
-        %> 
-        <input type="button" class="btn btn-info btn-sm" onclick="regresar('<%= request.getContextPath() %>/categorias?opcion=listar')" 
-        name="btnRegresar" value="Regresar" />
-        </div>
-        </div>   
-        </form>
-        
-        </div>
-    </div>
+           
+<h3>CREAR NUEVA CATEGORIA</h3>
+<form class="form-horizontal" id="frmCategoria" name="frmCategoria" action="<%= request.getContextPath() %>/categorias" method="post">
+<input type="hidden" name="id_categoria" value="<%= id %>" >
+            
+<div class="form-group">
+<label for="txtNomCategoria" class="col-sm-2 control-label">Nombre:</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="txtNomCategoria" value="<%= nombre_cat %>" required>
 </div>
+</div>
+                
+<div class="form-group">
+<label for="txtEstadoCategoria" class="col-sm-2 control-label">Estado:</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="txtEstadoCategoria" value="<%= estado_cat %>" required>
+</div>
+</div>
+                
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+<%
+if(request.getParameter("senal")!=null){
+%>
 
+<input type="submit" class="btn btn-success btn-sm" name="btnModificar" value="Actualizar" />
+<%
+ 
+}else{   
+
+%>    
+<input type="submit" class="btn btn-success btn-sm" name="btnGuardar" value="Guardar" />
+<%
+}  
+%> 
+<input type="button" class="btn btn-info btn-sm" onclick="regresar('<%= request.getContextPath() %>/categorias?opcion=listar')" 
+name="btnRegresar" value="Regresar" />
+</div>
+</div>   
+</form>
 
 <%@include file="../WEB-INF/Vistas-Parciales/pie.jspf" %>
 </body>

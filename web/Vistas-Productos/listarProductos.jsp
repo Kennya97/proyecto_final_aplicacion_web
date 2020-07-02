@@ -3,7 +3,6 @@
     Created on : 06-23-2020, 06:59:28 AM
     Author     : W. Hernandez
 ----%>
-<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import = "Model.Producto" %> <!----Importar el modelo------>
@@ -13,7 +12,6 @@
 <!-----El id debe ser el mismo que se le coloco de nombre a la sesion en el controlador----->
 <jsp:useBean id="lista" scope="session" class="java.util.List"/>
 <jsp:useBean id="categoria" scope="session" class="Model.Categoria"/>
-<jsp:useBean id="nom" class="DAO.CategoriaDAOImplementar" scope="page"></jsp:useBean>
 
 <html>
     <head>
@@ -26,20 +24,14 @@
         
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-10 col-sm-10">
-                    
-                    <br>
+                <div class="col-lg-12 col-md-7 col-sm-3">
                     <div style="">
             <a href="<%= request.getContextPath() %>/productos?opcion=crear" class="btn bg-success btn-sm" role="button"> Nuevo Producto</a>
             <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Productos" class="btn btn-info btn-group-sm" role="button">PDF</a>
-            
-            <center>
-            <h2>Listado de Productos Registrados</h2>
+            <h3>Listado de Productos Registrados</h3>
         <table class="table table-striped table-hover">
-            </center>
-            
             <tr>
-                <th>ID</th><th>NOMBRE</th><th>DESCRIPCION</th><th>STOCK</th><th>PRECIO</th><th>MEDIDA</th><th>ESTADO</th><th>CATEGORIA</th><th>FECHA ENTRADA</th><th>ACCION</th>
+                <th>ID</th><th>Nombre</th><th>Descripción</th><th>Stock</th><th>Precio</th><th>Medida</th><th>Estado</th><th>Categoría</th><th>Fecha Entrada</th><th>Acción</th>
             </tr>
             <%
                 for (int i = 0; i < lista.size(); i++) {
@@ -58,7 +50,6 @@
                 <td><%= producto.getCategoria_id()%></td>
                 <td><%= producto.getFecha_entrada()%></td>
                 <td>
-                    
                     <!-------Boton para invocar metodo editar------>
                     <a href="<%= request.getContextPath() %>/productos?opcion=modificar&&id_pro=<%= producto.getId_producto()%>&&nom_pro=<%= producto.getNom_producto()%>&&des_pro=<%= producto.getDes_producto()%>&&stock_pro=<%= producto.getStock()%>&&precio_pro=<%= producto.getPrecio()%>
                        &&unidad_pro=<%= producto.getUnidadMedida()%>&&estado_pro=<%= producto.getEstado()%>&&cat_pro=<%= producto.getCategoria_id()%>&&fecha_pro=<%= producto.getFecha_entrada()%>" 
@@ -82,12 +73,10 @@
             <input type="submit" class="btn btn-primary btn-sm glyphicon glyphicon-book" value=" Generar PDF" name="btnver"> 
         </form>
         ------->
-        
             </div>
         </div>
     </div>
  </div>
-            
 <%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>  
 </body>
 </html>

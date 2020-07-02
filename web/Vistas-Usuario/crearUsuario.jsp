@@ -56,32 +56,25 @@ fecha_registro= Usuario.getFecha_registro();
     <body>
         
 <%@include file="../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
-        
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 col-md-10 col-sm-10">
-                
-          <br>
-        <center>
         <h3>CREAR NUEVO USUARIO</h3>
-        </center> 
-          
-        <form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="<%= request.getContextPath() %>/Usuario" method="post">
-        <input type="hidden" name="id_usuario" value="<%= id %>" >
-        <div class="form-group">
-        <label for="txtNomUsuario" class="col-sm-2 control-label">Nombre:</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" name="txtNomUsuario" value="<%= nombre %>" required>
-        </div>
-        </div>
-        <div class="form-group">
-        <label for="txtApellUsuario" class="col-sm-2 control-label">Apellido:</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" name="txtApellUsuario" value="<%= apellido %>" required>
-        </div>
-        </div>
-
-        <div class="form-group">
+        
+                 
+<form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="<%= request.getContextPath() %>/Usuario" method="post">
+<input type="hidden" name="id_usuario" value="<%= id %>" >
+<div class="form-group">
+<label for="txtNomUsuario" class="col-sm-2 control-label">Nombre:</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="txtNomUsuario" value="<%= nombre %>" required>
+</div>
+</div>
+<div class="form-group">
+<label for="txtApellUsuario" class="col-sm-2 control-label">Apellido:</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="txtApellUsuario" value="<%= apellido %>" required>
+</div>
+</div>
+                
+<div class="form-group">
             <label for="txtcorrUsuario" class="col-sm-2 control-label">Correo:</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="txtcorrUsuario" value="<%= correo %>" required>
@@ -167,12 +160,6 @@ fecha_registro= Usuario.getFecha_registro();
         location.href = url;
         }
         </script>
-        
-            </div>
-        </div>
-</div>
-        
-        <%@include file="../WEB-INF/Vistas-Parciales/pie.jspf" %>
     </body>
 
 </html>

@@ -20,16 +20,13 @@
 <%@include file = "../WEB-INF/Vistas-Parciales/encabezado2.jspf" %>  
 
 <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-10 col-sm-10">
-                    
-                    <br>
+<div class="row justify-content-center">
+<div class="col-lg-12 col-md-7 col-sm-3">
 <a href="<%= request.getContextPath() %>/Usuario?opcion=crear" class="btn bg-success btn-sm " role="button"> Nuevo Usuario</a>
 <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Usuarios" class="btn btn-info btn-group-sm" role="button">PDF</a>
 
-<center>
-<h2>Listado De Usuario</h2>
-</center>
+<h3>Listado De Usuario</h3>
+
 
 <table class="table table- justify-content-center table-hover">
     
@@ -67,17 +64,14 @@ Usuario us = (Usuario) lista.get(i);
 <td><%=us.getRespuesta()%></td>
 <td><%=us.getFecha_registro()%></td>
 <td>
-    
  <!-- /Vistas-Categorias/crearCategoria.jsp -->
  <a href="<%= request.getContextPath() %>/usuario?opcion=modificar&&id=<%= us.getId()%>&&nombre=<%= us.getUsuario()%>&&apellido=<%= us.getApellido()%>&&correo=<%=us.getCorreo()%>
 &&usuario=<%=us.getUsuario()%>&&clave=<%=us.getClave()%>&&tipo=<%=us.getTipo()%>&&estado=<%=us.getEstado()%>&&pregunta=<%=us.getPregunta()%>&&respuesta=<%=us.getRespuesta()%>
 &&fecha_registro=<%=us.getFecha_registro()%>" class="btn btn-warning small glyphicon glyphicon-edit" role="button" name="btnmodi">Editar</a>
 </td>
-
 <td>
 <a href="<%= request.getContextPath() %>/usuario?opcion=eliminar&&id=<%= us.getId()%>" class="btn btn-danger small glyphicon glyphicon-remove" role="button"> Eliminar</a>
 </td>
-
 </tr>
                 
  <% }%>
@@ -86,8 +80,6 @@ Usuario us = (Usuario) lista.get(i);
 </div>
 </div>
 </div>
- 
- 
 <%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>  
 </body>
 </html>
