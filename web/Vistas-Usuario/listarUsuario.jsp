@@ -25,8 +25,9 @@
 <a href="<%= request.getContextPath() %>/Usuario?opcion=crear" class="btn bg-success btn-sm " role="button"> Nuevo Usuario</a>
 <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Usuarios" class="btn btn-info btn-group-sm" role="button">PDF</a>
 
+<center>
 <h3>Listado De Usuario</h3>
-
+</center>
 
 <table class="table table- justify-content-center table-hover">
     

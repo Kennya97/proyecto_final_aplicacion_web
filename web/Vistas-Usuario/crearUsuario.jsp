@@ -56,7 +56,8 @@ fecha_registro= Usuario.getFecha_registro();
     <body>
         
 <%@include file="../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
-        <h3>CREAR NUEVO USUARIO</h3>
+        
+<h3>CREAR NUEVO USUARIO</h3>
         
                  
 <form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="<%= request.getContextPath() %>/Usuario" method="post">

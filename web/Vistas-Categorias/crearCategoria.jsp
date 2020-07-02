@@ -48,8 +48,15 @@ location.href = url;
 <body>
     
 <%@include file="../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
-           
+
+<div class="container">
+    <div class="row justify-content-center">
+       <div class="col-lg-10 col-md-10 col-sm-10">
+
+ <center>
 <h3>CREAR NUEVA CATEGORIA</h3>
+</center>
+
 <form class="form-horizontal" id="frmCategoria" name="frmCategoria" action="<%= request.getContextPath() %>/categorias" method="post">
 <input type="hidden" name="id_categoria" value="<%= id %>" >
             
@@ -88,6 +95,10 @@ name="btnRegresar" value="Regresar" />
 </div>
 </div>   
 </form>
+
+       </div>
+    </div>
+</div>
 
 <%@include file="../WEB-INF/Vistas-Parciales/pie.jspf" %>
 </body>

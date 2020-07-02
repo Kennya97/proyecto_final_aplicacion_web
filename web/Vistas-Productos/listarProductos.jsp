@@ -24,12 +24,17 @@
         
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-7 col-sm-3">
+                <div class="col-lg-12 col-md-10 col-sm-10">
+                    
                     <div style="">
             <a href="<%= request.getContextPath() %>/productos?opcion=crear" class="btn bg-success btn-sm" role="button"> Nuevo Producto</a>
             <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Productos" class="btn btn-info btn-group-sm" role="button">PDF</a>
+            
+            <center>
             <h3>Listado de Productos Registrados</h3>
-        <table class="table table-striped table-hover">
+            </center>
+            
+            <table class="table table-striped table-hover">
             <tr>
                 <th>ID</th><th>Nombre</th><th>Descripción</th><th>Stock</th><th>Precio</th><th>Medida</th><th>Estado</th><th>Categoría</th><th>Fecha Entrada</th><th>Acción</th>
             </tr>

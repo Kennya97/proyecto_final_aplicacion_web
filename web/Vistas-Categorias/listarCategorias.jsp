@@ -8,11 +8,13 @@
 <!DOCTYPE html>
 <!-- El id debe ser el mismo que se le colocó de nombre a la sesión en el controlador -->
 <jsp:useBean id="lista" scope="session" class="java.util.List" />
+
 <html>
 <head>
 <title>Control de Inventario</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <%@include file="../WEB-INF/Vistas-Parciales/css-js.jspf" %>
 
 </head>
@@ -22,7 +24,11 @@
         
 <!-- Todo el contenido de la aplicación -->
         
-<div style="width: 600px;">
+<div class="container">
+    <div class="row justify-content-center">
+       <div class="col-lg-10 col-md-10 col-sm-10">
+           
+<div style="">
 <!--<a href="#" cla<center>ss="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button">Nueva categoria</a>-->
 <br>
 <a href="<%= request.getContextPath() %>/categorias?opcion=crear" class="btn bg-success btn-sm" role="button">Nueva Categoria</a>
@@ -30,8 +36,9 @@
 
 <center>
 <h2>Listado de Categorias Registradas</h2>
-<table class="table table-striped">
-    <center>
+<table class="table table-striped table-hover">
+ <center>
+     
 <tr>
 <th>ID</th>
 <th>NOMBRE</th>
@@ -54,6 +61,7 @@ categoria = (Categoria)lista.get(i);
 <a href="<%= request.getContextPath() %>/categorias?opcion=eliminar&&id=<%= categoria.getId_categoria() %>" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button">Eliminar</a>
 </td>
 </tr>
+
 <%
 }
 %>
@@ -62,6 +70,11 @@ categoria = (Categoria)lista.get(i);
 </center>  
 
 </div>
+       </div>
+    </div>
+</div>
+
+
  <!--FIN DEL CONTENIDO -->
 <%@include file="../WEB-INF/Vistas-Parciales/pie.jspf" %>
 </body>
