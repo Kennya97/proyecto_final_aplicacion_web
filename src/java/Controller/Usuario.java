@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controller;
 
 import DAO.UsuarioDAO;
@@ -91,7 +86,7 @@ public class Usuario extends HttpServlet {
 
         } else if (parametro.equals("eliminar")) {
             int del_id = Integer.parseInt(request.getParameter("id"));
-            UsuarioDAO us = new UsuarioDAOImplementar() {};
+            UsuarioDAOImplementar us = new UsuarioDAOImplementar() {};
             us.borrarUsu(del_id);
             this.listaUsuarios(request, response);
         }
@@ -130,7 +125,7 @@ public class Usuario extends HttpServlet {
         //us.(fecha_entrada);
 
 //IMPLEMEMENTAR LA CLASE ProductoDAO
-        UsuarioDAO guardarUsuario = new UsuarioDAOImplementar();
+        UsuarioDAOImplementar guardarUsuario = new UsuarioDAOImplementar();
 
         //guardarUsuario.guardarUsu(us);
 
