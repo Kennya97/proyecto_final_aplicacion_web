@@ -50,6 +50,8 @@ public class UsuarioDAO2 {
                         user.setApellido(result.getString("apellido"));
 		}
 
+                
+                
 		connection.close();
 
 		return user;
