@@ -160,7 +160,7 @@ public class GenerarPDF {
                 tablaRegistro.addCell(Cuerpo);
                 Cuerpo.setPhrase(new Paragraph(String.valueOf(producto.getEstado()),FuenteSubtitulo));
                 tablaRegistro.addCell(Cuerpo);
-                Cuerpo.setPhrase(new Paragraph(String.valueOf(producto.getCategoria()),FuenteSubtitulo));
+                Cuerpo.setPhrase(new Paragraph(String.valueOf(producto.getCategoria_id()),FuenteSubtitulo));
                 tablaRegistro.addCell(Cuerpo);
                 Cuerpo.setPhrase(new Paragraph(String.valueOf(producto.getFecha_entrada()),FuenteSubtitulo));
                 tablaRegistro.addCell(Cuerpo);
