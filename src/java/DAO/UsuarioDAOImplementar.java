@@ -213,7 +213,7 @@ return borrar;
     
 @Override
  public int validar(Usuarios usu) throws SQLException{
-    String sql = "Select nombre , correo from tb_usuario where nombre = '"+ usu.getNombre() +"' AND correo = '" + usu.getCorreo() + "' ";
+    String sql = "Select nombre , correo from tb_usuario where correo = '"+ usu.getCorreo() +"' AND clave = '" + usu.getClave() + "' ";
     this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
     int estado;
     rs = conn.consultaSQL(sql);

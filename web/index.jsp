@@ -10,19 +10,20 @@
     <body style="background:  #FAF0E6">
         <br><br><br><br>
         <div class="container col-lg-3">
-            <form action="Login" method="POST" >
+            <form action="Controlador" method="POST" >
                 <div class="from-goup text-center">
                     <img src="img/1.jpg" height="80" width="80"/>
                     <p><strong>Bienvenidos a Sistema Login</strong></p>
                 </div>
                 <div class="form-group">
-                <label>Nombre:</label>
-                <input class="form-control" type="text" name="txtnom" placeholder="Ingrese Nombre" required=""> 
+                <label>Correo:</label>
+                <input class="form-control" type="email" name="txtCorreo" placeholder="Ingrese Correo" required=""> 
                </div>
         <div class="form-group">
             <label>Contraseña:</label>
             <input type="password" name="txtPass" placeholder="Ingrese su Contraseña" class="form-control">
         </div>
+                <input type="hidden" name="accion" value="Ingresar">
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
                 <center>

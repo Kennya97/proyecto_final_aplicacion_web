@@ -23,11 +23,12 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException, SQLException {
        response.setContentType("text/html;charset=UTF-8");
        String accion = request.getParameter("accion");
+        System.out.println("Accion " + accion);
             if(accion.equals("Ingresar")){
-                    String nom=request.getParameter("txtnom");
-                    String Correo=request.getParameter("txtCorreo");
-                    p.setNombre(nom);
-                    p.setCorreo(Correo);
+                    String correo =request.getParameter("txtCorreo");
+                    String Clave =request.getParameter("txtPass");
+                    p.setCorreo(correo);
+                    p.setClave(Clave);
                     try {
                         System.out.println("Estado busqueda " + dao.validar(p));
                     } catch (SQLException ex) {
@@ -76,7 +77,11 @@ request.getRequestDispatcher("index.jsp").forward(request, response);
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
