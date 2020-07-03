@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Controlador extends HttpServlet {
     UsuarioDAO dao = new UsuarioDAOImplementar();
@@ -32,28 +33,35 @@ public class Controlador extends HttpServlet {
                     } catch (SQLException ex) {
                         Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
-                    if(dao.validar(p) == 1){
-                        request.getSession().setAttribute("nombre",nom);
-                        request.getSession().setAttribute("Correo",Correo);
-                        request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    }else{
-                        request.getRequestDispatcher("index.jsp").forward(request, response);
-                    }
-            }else{
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
-    }
+               
+if(dao.validar(p) == 1){
+// ESTA ES LA VARIABLE QUE CONTENDRA LA SESION
+                        
+HttpSession Logeado = request.getSession(true);
+// SE LE ASIGNA VALORES A LA SESION
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+Logeado.setAttribute("datosUsuario", p); // objeto de tipo persona con los valores
+                                                                        // nombre y correo asignados
+                                                                        // Revisar vista principal el codigo de ahi lo penga en donde quiere que
+                                                                         // que se compruebe que hay una session activa
+request.getRequestDispatcher("Principal.jsp").forward(request, response);
+}else{
+request.getRequestDispatcher("index.jsp").forward(request, response);
+}
+}else if(accion.equalsIgnoreCase("Salir")){
+// Guardo obtengo la session que cree
+HttpSession sessionActiva = request.getSession();
+
+// Mato la session Si no es valida
+sessionActiva.invalidate();
+// Llamo a la vista index
+response.sendRedirect("index.jsp");
+}else{
+request.getRequestDispatcher("index.jsp").forward(request, response);
+}
+}
+
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -64,25 +72,14 @@ public class Controlador extends HttpServlet {
         }
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+
     @Override
     public String getServletInfo() {
         return "Short description";
