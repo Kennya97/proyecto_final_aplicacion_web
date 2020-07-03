@@ -77,9 +77,14 @@ fecha_registro_u = Usuario.getFecha_registro();
     <body>
         
 <%@include file="../WEB-INF/Vistas-Parciales/encabezado.jspf" %>
-        
+    
+<div class="container">
+    <div class="row justify-content-center">
+       <div class="col-lg-10 col-md-10 col-sm-10">
+    
+  <center>
 <h3>CREAR NUEVO USUARIO</h3>
-        
+    </center>
                  
 <form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="<%= request.getContextPath() %>/Usuario" method="post">
 <input type="hidden" name="id_usuario" value="<%= id %>" >
@@ -183,6 +188,12 @@ fecha_registro_u = Usuario.getFecha_registro();
         location.href = url;
         }
         </script>
+        
+       </div>
+    </div>
+</div>
+           
+        
+        <%@include file = "../WEB-INF/Vistas-Parciales/pie.jspf" %>
     </body>
-
 </html>

@@ -7,12 +7,19 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <title>Inicio de Sesion</title>
     </head>
-    <body style="background:  #FAF0E6">
+    <style>
+        body{
+            background-image:url("img/fon.jpg");
+             background-size: 1425px;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <body>
         <br><br><br><br>
         <div class="container col-lg-3">
             <form action="Controlador" method="POST" >
                 <div class="from-goup text-center">
-                    <img src="img/1.jpg" height="80" width="80"/>
+                    <img src="img/usua.png" height="130" width="130"/>
                     <p><strong>Bienvenidos a Sistema Login</strong></p>
                 </div>
                 <div class="form-group">
@@ -27,8 +34,8 @@
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
                 <center>
-        <a href="Usuario?opcion=crear">Crear Cuenta</a>     
-        <br><a href="">Restaurar Contraseña</a>
+        <a href="http://localhost:8080/proyecto_final_aplicacion_web/CrearCuenta.jsp">Crear Cuenta</a>     
+        <br><a href="http://localhost:8080/proyecto_final_aplicacion_web/Recupera.jsp">Restaurar Contraseña</a>
                 </center>
             </form>
             

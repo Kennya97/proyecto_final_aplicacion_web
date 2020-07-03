@@ -136,7 +136,7 @@ producto.setFecha_entrada(fecha_entrada);
 
 ProductoDAO guardarProducto = new ProductoDAOImplementar();
 
-guardarProducto.guardarproduc(producto);
+guardarProducto.guardarPro(producto);
         
 this.listaProductos(request, response);
         

@@ -79,17 +79,17 @@ ProductoDAO producto = new ProductoDAOImplementar();
 
 Producto guardar_pro = new Producto();
 
-guardar_pro.setNom_producto("Licuadora");
+guardar_pro.setNom_producto("Plancha");
 
 //guardar_pro.setId_producto(3);//ID_A MODIFICAR
 
-guardar_pro.setDes_producto("Muy Grandes"); //DESCRIPCION
+guardar_pro.setDes_producto("Plancha"); //DESCRIPCION
 guardar_pro.setStock(3);
 guardar_pro.setPrecio(1);
 guardar_pro.setUnidadMedida("Docena");
 guardar_pro.setEstado(1);
-guardar_pro.setCategoria_id(9);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
-guardar_pro.setFecha_entrada("12-12-2010");
+guardar_pro.setCategoria_id(17);//AQUI PUSE NULL PORQUE NOSE COMO LLAMARLO 
+guardar_pro.setFecha_entrada("2016-10-10 11:11:0");
 
 producto.guardarPro(guardar_pro);
         
