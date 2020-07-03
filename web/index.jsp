@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Inicio de Sesion</title>
     </head>
     <body>
         
@@ -25,7 +25,7 @@
         </div>
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
-        <a href="">Crear Cuenta</a>       <a href="">Restaurar Contraseña</a>
+        <a href="Usuario?opcion=crear">Crear Cuenta</a>       <a href="">Restaurar Contraseña</a>
                 
             </form>
             

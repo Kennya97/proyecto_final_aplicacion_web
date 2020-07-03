@@ -2,7 +2,7 @@ package Controller;
 
 import DAO.UsuarioDAO;
 import DAO.UsuarioDAOImplementar;
-import Model.Usuario;
+import Model.Usuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Controlador extends HttpServlet {
     UsuarioDAO dao = new UsuarioDAOImplementar();
-    Usuario p = new Usuario();
+    Usuarios p = new Usuarios();
     int r;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

@@ -4,7 +4,7 @@
     Author     : ADMIN
 --%>
 
-<%@page import="Model.Usuario"%>
+<%@page import="Model.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="lista" scope="session" class="java.util.ArrayList"/>
 <!DOCTYPE html>
@@ -49,7 +49,7 @@
 
 <% 
 for(int i = 0; i< lista.size(); i++){
-Usuario us = (Usuario) lista.get(i);
+Usuarios us = (Usuarios) lista.get(i);
                     
 %>
 <tr>                    
@@ -66,12 +66,12 @@ Usuario us = (Usuario) lista.get(i);
 <td><%=us.getFecha_registro()%></td>
 <td>
  <!-- /Vistas-Categorias/crearCategoria.jsp -->
- <a href="<%= request.getContextPath() %>/usuario?opcion=modificar&&id=<%= us.getId()%>&&nombre=<%= us.getUsuario()%>&&apellido=<%= us.getApellido()%>&&correo=<%=us.getCorreo()%>
-&&usuario=<%=us.getUsuario()%>&&clave=<%=us.getClave()%>&&tipo=<%=us.getTipo()%>&&estado=<%=us.getEstado()%>&&pregunta=<%=us.getPregunta()%>&&respuesta=<%=us.getRespuesta()%>
+ <a href="<%= request.getContextPath() %>/Usuario?opcion=modificar&&id_u=<%= us.getId()%>&&nombre_u=<%= us.getUsuario()%>&&apellido_u=<%= us.getApellido()%>&&correo_u=<%=us.getCorreo()%>
+&&usuario_u=<%=us.getUsuario()%>&&clave_u=<%=us.getClave()%>&&tipo_u=<%=us.getTipo()%>&&estado_u=<%=us.getEstado()%>&&pregunta_u=<%=us.getPregunta()%>&&respuesta_u=<%=us.getRespuesta()%>
 &&fecha_registro=<%=us.getFecha_registro()%>" class="btn btn-warning small glyphicon glyphicon-edit" role="button" name="btnmodi">Editar</a>
 </td>
 <td>
-<a href="<%= request.getContextPath() %>/usuario?opcion=eliminar&&id=<%= us.getId()%>" class="btn btn-danger small glyphicon glyphicon-remove" role="button"> Eliminar</a>
+<a href="<%= request.getContextPath() %>/Usuario?opcion=eliminar&&id=<%= us.getId()%>" class="btn btn-danger small glyphicon glyphicon-remove" role="button"> Eliminar</a>
 </td>
 </tr>
                 

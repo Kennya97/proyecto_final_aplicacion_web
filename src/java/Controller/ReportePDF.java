@@ -9,7 +9,7 @@ import DAO.UsuarioDAO;
 import DAO.UsuarioDAOImplementar;
 import Model.GenerarPDF;
 import static Model.GenerarPDF.Generar_PDF;
-import Model.Usuario;
+import Model.Usuarios;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.codec.Base64;
 import java.io.IOException;

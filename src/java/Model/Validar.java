@@ -1,6 +1,6 @@
 package Model;
 
 public interface Validar {
-    public int validar(Usuario usu);
+    public int validar(Usuarios usu);
     
 }

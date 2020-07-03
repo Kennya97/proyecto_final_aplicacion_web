@@ -27,7 +27,7 @@
 <%@include file="WEB-INF/Vistas-Parciales/encabezado.jspf"%>
          
         <div class="container mt-4">
-            <h1>Bienvenid@ al Sistema <strong>${nombre}</strong> es un placer que estes con nosotos...</h1>
+            <h1>Bienvenid@ al Sistema <strong>${nombre}</strong> es un placer que estes con nosotros...</h1>
         </div>
         
         

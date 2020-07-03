@@ -4,7 +4,7 @@
 <div class="encabezado">
 SISTEMA DE CONTROL DE INVENTARIO
 <!-- Los href aca apuntan a los servlets creados dentro del controlador -->
-<a href="index" class="btn btn-default btn-sm" role="button">Inicio</a>
+<a href="Principal.jsp" class="btn btn-default btn-sm" role="button">Inicio</a>
 <!--<a href="categorias" class="btn btn-primary btn-sm" role="button">Categorias</a>-->
 <a href="categorias?opcion=listar" class="btn btn-default btn-sm" role="button">Categorias</a>
 <a href="productos?opcion=listar" class="btn btn-default btn-sm" role="button">Productos</a>
@@ -19,7 +19,7 @@ SISTEMA DE CONTROL DE INVENTARIO
 <div class="dropdown">
                 <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown">Cerrar Session</a>
                 <div class="dropdown-menu text-center">
-                    <a><img src="img/2.jpg" height="80" width="80"></a><br>
+                    <a><img src="img/2.png" height="80" width="80"></a><br>
                     <a>${nombre}</a>
                     <a>${Correo}</a>
                     <div class="dropdown-diveder"></div>
@@ -27,8 +27,7 @@ SISTEMA DE CONTROL DE INVENTARIO
                 </div>
             </div>
                     
-          </div>   
-                    
+               </div>
 </div>
     
 <div class="contenido">

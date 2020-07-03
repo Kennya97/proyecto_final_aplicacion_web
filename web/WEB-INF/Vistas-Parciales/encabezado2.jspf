@@ -7,7 +7,7 @@ SISTEMA DE CONTROL DE INVENTARIO
 
 <!-- Los href aca apuntan a los servlets creados dentro del controlador -->
 
-<a href="index" class="btn btn-default btn-sm" role="button">Inicio</a>
+<a href="Principal.jsp" class="btn btn-default btn-sm" role="button">Inicio</a>
 
 <!--<a href="categorias" class="btn btn-primary btn-sm" role="button">Categorias</a>-->
 <a href="categorias?opcion=listar" class="btn btn-default btn-sm" role="button">Categorias</a>
@@ -16,10 +16,9 @@ SISTEMA DE CONTROL DE INVENTARIO
 <a href="index2" class="btn btn-default btn-sm" role="button">Creadores</a>
 <a href="index" class="btn btn-default btn-sm" role="button">Cerrar Session</a>
 
-
       </div>  
         
 </div>
-    
+
 <div class="contenido">
 <!--Este div no se cierra aquí, se cierra en el pie.jspf -->

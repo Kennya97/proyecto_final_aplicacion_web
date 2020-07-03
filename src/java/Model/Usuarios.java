@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
  *
  * @author castr
  */
-public class Usuario {
+public class Usuarios {
       
 private int id;
 private String nombre;
@@ -21,14 +21,14 @@ private String pregunta;
 private String respuesta;
 private String fecha_registro;
 
-public Usuario() {
+public Usuarios() {
 this.id=0;
 this.nombre="";
 this.tipo=1;
-this.estado =1;
+this.estado = 1;
 }
 
-    public Usuario(int id, String nombre, String apellido, String correo, String usuario, String clave, int tipo, int estado, String pregunta, String fecha_registro) {
+    public Usuarios(int id, String nombre, String apellido, String correo, String usuario, String clave, int tipo, int estado, String pregunta, String fecha_registro) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

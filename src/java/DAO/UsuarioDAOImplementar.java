@@ -4,7 +4,7 @@ package DAO;
 import Factory.ConexionDB;
 import Factory.FactoryConexionDB;
 import Model.Conexion;
-import Model.Usuario;
+import Model.Usuarios;
 import Model.Validar;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,14 +34,14 @@ public UsuarioDAOImplementar() {
 //METODO PARA LISTAR
     
 @Override
- public List<Usuario> Listar() {
+ public List<Usuarios> Listar() {
      
 this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
 
 StringBuilder miSQL = new StringBuilder();
 
 miSQL.append("SELECT * FROM tb_usuario;");
-List<Usuario> lista = new ArrayList<Usuario>();
+List<Usuarios> lista = new ArrayList<Usuarios>();
 try{
             
 //Se crea el objeto ResultSet implementando el método (consultaSQL) creado para la consulta.
@@ -49,7 +49,7 @@ ResultSet resultadoSQL = this.conn.consultaSQL(miSQL.toString());
 
 while(resultadoSQL.next()){
     
-Usuario Usu = new Usuario();
+Usuarios Usu = new Usuarios();
 
 //Asignar cada campo consultado al atributo en la clase.
 Usu.setId(resultadoSQL.getInt("id"));
@@ -78,7 +78,7 @@ return lista;
     
 
 @Override
-public List<Usuario> Listar2() {
+public List<Usuarios> Listar2() {
 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 }
 
@@ -87,10 +87,10 @@ throw new UnsupportedOperationException("Not supported yet."); //To change body 
 
 //METODO PARA EDITAR 
 @Override
-public Usuario editarUsu(int id_usu_edit) {
+public Usuarios editarUsu(int id_usu_edit) {
  this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
  
-Usuario usuario = new Usuario();
+Usuarios usuario = new Usuarios();
 StringBuilder miSQL = new StringBuilder();
 //Agregar la consulta SQL.
 
@@ -129,7 +129,7 @@ return usuario;
 
 //METODO PARA GUARDAR
     @Override
-public boolean guardarUsu(Usuario usuario) {
+public boolean guardarUsu(Usuarios usuario) {
  this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
      
 boolean guardar = false; //BANDERA DE RESULTADO
@@ -140,10 +140,10 @@ if(usuario.getId() ==0){
 StringBuilder miSQL = new StringBuilder();
 //AGREGA CONSULTA SQL EL ID_CATEGORIA ES AUTOINCREMNTABLE
 
-miSQL.append("INSERT INTO tb_usuario(nombre,  apellido, correo, usuario, clave, tipo, estado, pregunta, respuesta, fecha_registro) VALUES ('");
-miSQL.append(usuario.getNombre() + "', ").append(usuario.getApellido() +"',").append(usuario.getCorreo()+"',")
-        .append(usuario.getUsuario()+"',").append(usuario.getClave()+"',").append(usuario.getTipo()+"',").append
-        (usuario.getEstado()+"',").append(usuario.getPregunta()+"',").append(usuario.getRespuesta()+"',").append(usuario.getFecha_registro());
+miSQL.append("INSERT INTO tb_usuario(nombre,  apellido, correo, usuario, clave, tipo, estado, pregunta, respuesta) VALUES ('");
+miSQL.append(usuario.getNombre() + "', '").append(usuario.getApellido() +"','").append(usuario.getCorreo()+"','")
+        .append(usuario.getUsuario()+"','").append(usuario.getClave()+"',").append(usuario.getTipo()+",").append
+        (usuario.getEstado()+",'").append(usuario.getPregunta()+"','").append(usuario.getRespuesta()+"'");
         miSQL.append(");");
     
 //Invocar método para ejecutar la consulta.
@@ -161,16 +161,16 @@ System.out.println("Entramos...");
 StringBuilder miSQL = new StringBuilder();
 miSQL.append("UPDATE tb_usuario SET id = ").append(usuario.getId());
 miSQL.append(", nombre =  '").append(usuario.getNombre());
-miSQL.append(", apellido =  '").append(usuario.getApellido());
-miSQL.append(", correo =  '").append(usuario.getCorreo());
-miSQL.append(", usuario =  '").append(usuario.getUsuario());
-miSQL.append(", clave =  '").append(usuario.getClave());
-miSQL.append(", tipo =  '").append(usuario.getTipo());
-miSQL.append(", estado =  '").append(usuario.getEstado());
+miSQL.append(" ', apellido =  '").append(usuario.getApellido());
+miSQL.append("', correo =  '").append(usuario.getCorreo());
+miSQL.append("', usuario =  '").append(usuario.getUsuario());
+miSQL.append("', clave =  '").append(usuario.getClave());
+miSQL.append("', tipo =  ").append(usuario.getTipo());
+miSQL.append(", estado =  ").append(usuario.getEstado());
 miSQL.append(", pregunta =  '").append(usuario.getPregunta());
-miSQL.append(", respuesta =  '").append(usuario.getRespuesta());
-miSQL.append(", fecha_registro =  '").append(usuario.getFecha_registro());
-
+miSQL.append("', respuesta =  '").append(usuario.getRespuesta());
+miSQL.append("' ");
+ 
 
 miSQL.append(" WHERE id = ").append(usuario.getId()).append(";");
                 
@@ -212,13 +212,13 @@ return borrar;
     
     
 @Override
- public int validar(Usuario usu) throws SQLException{
+ public int validar(Usuarios usu) throws SQLException{
     String sql = "Select nombre , correo from tb_usuario where nombre = '"+ usu.getNombre() +"' AND correo = '" + usu.getCorreo() + "' ";
     this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
     int estado;
     rs = conn.consultaSQL(sql);
     rs.next();
-    Usuario resulUs = new Usuario();
+    Usuarios resulUs = new Usuarios();
     resulUs.setNombre(rs.getString("nombre"));
     resulUs.setCorreo(rs.getString("correo"));
        if(resulUs.getNombre().equalsIgnoreCase("")){
