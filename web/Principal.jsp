@@ -4,7 +4,27 @@
     Author     : DELL 1
 --%>
 
+<%@page import="Model.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!-- Me permite usar las sessiones deben pegar esto donde necesiten comprobar session-->
+<%@page session="true"%>
+
+<%
+    // Obtengo la session que cree en el Controlador.java
+    HttpSession sessionActiva = request.getSession();
+    // Verifico que la variable tiene valores para evitar el nullPointerException
+    if(sessionActiva.getAttribute("datosUsuario")!= null){
+       // Guardo los valores de la session en un objeto Usuario 
+       Usuarios usuarioLogeado = (Usuarios) sessionActiva.getAttribute("datosUsuario");
+    }else{
+// Session nulla reenvio a index.jsp para que inicie session
+response.sendRedirect("index.jsp");
+}
+%>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +44,7 @@
 
     
  <!-- Vistar parciales de la parte superior de nuestra aplicación -->
-<%@include file="WEB-INF/Vistas-Parciales/encabezado.jspf"%>
+<%@include file="WEB-INF/Vistas-Parciales/encabezado2.jspf"%>
          
         <div class="container mt-4">
             <h1>Bienvenid@ al Sistema <strong>${nombre}</strong> es un placer que estes con nosotros...</h1>

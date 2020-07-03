@@ -7,8 +7,8 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <title>Inicio de Sesion</title>
     </head>
-    <body>
-        
+    <body style="background:  #FAF0E6">
+        <br><br><br><br>
         <div class="container col-lg-3">
             <form action="Login" method="POST" >
                 <div class="from-goup text-center">
@@ -16,8 +16,8 @@
                     <p><strong>Bienvenidos a Sistema Login</strong></p>
                 </div>
                 <div class="form-group">
-                <label>Correo:</label>
-                <input class="form-control" type="email" name="txtCorreo" placeholder="Ingrece su Correo"> 
+                <label>Nombre:</label>
+                <input class="form-control" type="text" name="txtnom" placeholder="Ingrese Nombre" required=""> 
                </div>
         <div class="form-group">
             <label>Contraseña:</label>
@@ -25,8 +25,10 @@
         </div>
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
-        <a href="Usuario?opcion=crear">Crear Cuenta</a>       / <a href="">Restaurar Contraseña</a>
-                
+                <center>
+        <a href="Usuario?opcion=crear">Crear Cuenta</a>     
+        <br><a href="">Restaurar Contraseña</a>
+                </center>
             </form>
             
         </div>

@@ -1,4 +1,28 @@
+<%-- 
+    Document   : crearCategoria
+    Created on : 06-22-2020, 11:29:14 PM
+    Author     : castr
+--%>
+
+<%@page import="Model.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!--CODIGO AGREGADO PARA LA SESIÓN SI NO A INGRESADO EL USUARIO NO PODRA VISUALIZAR 
+NI LAS LISTA NI AGREGAR UN NUEVO REGISTRO-->
+<%@page session="true"%>
+
+<%
+// Obtengo la session que cree en el Controlador.java
+HttpSession sessionActiva = request.getSession();
+// Verifico que la variable tiene valores para evitar el nullPointerException
+if(sessionActiva.getAttribute("datosUsuario")!= null){
+// Guardo los valores de la session en un objeto Usuario 
+Usuarios usuarioLogeado = (Usuarios) sessionActiva.getAttribute("datosUsuario");
+}else{
+// Session nulla reenvio a index.jsp para que inicie session
+response.sendRedirect("index.jsp");
+}
+%>
 <!DOCTYPE html>
 
 <!-- Para importar los datos de la clase Categoria -->

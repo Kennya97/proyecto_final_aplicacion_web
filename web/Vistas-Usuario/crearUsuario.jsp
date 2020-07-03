@@ -1,6 +1,33 @@
+<%-- 
+    Document   : crearUsuario
+    Created on : 06-28-2020, 12:10:17 PM
+    Author     : ADMIN
+--%>
+
+<%@page import="Model.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!--CODIGO AGREGADO PARA LA SESIÓN SI NO A INGRESADO EL USUARIO NO PODRA VISUALIZAR 
+NI LAS LISTA NI AGREGAR UN NUEVO REGISTRO-->
+<%@page session="true"%>
+
+<%
+// Obtengo la session que cree en el Controlador.java
+HttpSession sessionActiva = request.getSession();
+// Verifico que la variable tiene valores para evitar el nullPointerException
+if(sessionActiva.getAttribute("datosUsuario")!= null){
+// Guardo los valores de la session en un objeto Usuario 
+Usuarios usuarioLogeado = (Usuarios) sessionActiva.getAttribute("datosUsuario");
+}else{
+// Session nulla reenvio a index.jsp para que inicie session
+response.sendRedirect("index.jsp");
+}
+%>
+
+
+
 <jsp:useBean id="Usuario" scope="session" class="Model.Usuarios" />
-    <%
+ <%
 String id = "";
 String nombre_u = "";
 String apellido_u = "";
@@ -122,7 +149,7 @@ fecha_registro_u = Usuario.getFecha_registro();
       <div class="form-group">
             <label for="txtFechUsuario" class="col-sm-2 control-label">Fecha de registro:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="txtFechUsuario" value="<%= fecha_registro_u %>" required>
+                <input type="datetime-local" class="form-control" name="txtFechUsuario" value="<%= fecha_registro_u %>" required>
             </div>
         </div>
                 
