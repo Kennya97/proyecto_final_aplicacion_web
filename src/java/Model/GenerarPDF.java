@@ -13,6 +13,7 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -29,9 +30,18 @@ import java.util.List;
 public class GenerarPDF {
     //se definen las fuentes 
     public static final Font FuenteTitulos = FontFactory.getFont(FontFactory.TIMES_ROMAN,18, Font.BOLD);
-    public static final Font FuenteSubtitulo = FontFactory.getFont(FontFactory.TIMES_ITALIC,12, Font.NORMAL); 
-    public static final Font FuenteHormiga = FontFactory.getFont(FontFactory.TIMES_ROMAN,11, Font.BOLD);
-    public static final Font FuenteMiniHormiga = FontFactory.getFont(FontFactory.TIMES_ITALIC,9, Font.NORMAL);
+    public static final Font FuenteSubtitulo = FontFactory.getFont(FontFactory.TIMES_ITALIC,12, Font.NORMAL,BaseColor.BLACK); 
+    public static final Font FuenteHormiga = FontFactory.getFont(FontFactory.TIMES_ROMAN,11, Font.NORMAL,BaseColor.WHITE);
+    public static final Font FuenteMiniHormiga = FontFactory.getFont(FontFactory.TIMES_ITALIC,9, Font.NORMAL,BaseColor.BLACK);
+    public static final Font FuenteCabecera = FontFactory.getFont(FontFactory.TIMES_ITALIC,12,Font.NORMAL, BaseColor.WHITE);
+ 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public GenerarPDF() {
+    }
     //para poder seguir con los reportes se crea otra de estas, con difeentes    
     //parametros dependiendo de la tabla 
     //y la cantidad de campos que posea utilizando la lista, el bucle y el 
@@ -55,7 +65,7 @@ public class GenerarPDF {
             documento.addTitle("ProyectoFinal");
             
             //se crea una pagina :3 
-            Paragraph titulo = new Paragraph(new Phrase("Registros de Categoria", FuenteSubtitulo));
+            Paragraph titulo = new Paragraph(new Phrase("Registros de Categoria", FuenteTitulos));
             // Alinear
             titulo.setAlignment(Chunk.ALIGN_CENTER);
             //add documento
@@ -65,19 +75,21 @@ public class GenerarPDF {
             PdfPTable registro = new  PdfPTable(numeroColumnas);
             //crear la cabecera
             PdfPCell Cabecera = new PdfPCell();
+            Cabecera.setHorizontalAlignment(Element.ALIGN_CENTER);
+            Cabecera.setBackgroundColor(BaseColor.BLACK);
             // alinear celdas(texto)
             Cabecera.setHorizontalAlignment(Element.ALIGN_CENTER);
             // Nombre de la celda
-            Cabecera.setPhrase(new Paragraph("ID",FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("ID",FuenteCabecera));
             registro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("NOMBRE CATEGORIA",FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("NOMBRE CATEGORIA",FuenteCabecera));
             registro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("ESTADO",FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("ESTADO",FuenteCabecera));
             registro.addCell(Cabecera);
             
             for(int i = 0; i < tablaCategorias.size(); i++){
                 Categoria Tabla = (Categoria) tablaCategorias.get(i);
-                
+                Cabecera.setBackgroundColor(BaseColor.WHITE);
                 Cabecera.setPhrase(new Paragraph(String.valueOf(Tabla.getId_categoria()),FuenteSubtitulo));
                 registro.addCell(Cabecera);
                 Cabecera.setPhrase(new Paragraph(Tabla.getNom_categoria(),FuenteSubtitulo));
@@ -114,7 +126,7 @@ public class GenerarPDF {
             documento.addSubject("muricion");
             documento.addTitle("ProyectoFinal");
             //se crea una pagina :3 
-            Paragraph titulo = new Paragraph(new Phrase("Registros de Productos", FuenteSubtitulo));
+            Paragraph titulo = new Paragraph(new Phrase("Registros de Productos", FuenteTitulos));
             
             // Alinear
             titulo.setAlignment(Chunk.ALIGN_CENTER);
@@ -124,22 +136,22 @@ public class GenerarPDF {
             // Definir cabecera
             PdfPCell Cabecera = new PdfPCell();
             Cabecera.setHorizontalAlignment(Element.ALIGN_CENTER);
-            Cabecera.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            Cabecera.setPhrase(new Paragraph("Nombre", FuenteSubtitulo));
+            Cabecera.setBackgroundColor(BaseColor.BLACK);
+            Cabecera.setPhrase(new Paragraph("Nombre", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Descripcion", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Descripcion", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Stock", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Stock", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Precio", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Precio", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Unidad Medidad", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Unidad Medidad", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Estado", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Estado", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Categoria", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Categoria", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Fecha Ingreso", FuenteSubtitulo));
+            Cabecera.setPhrase(new Paragraph("Fecha Ingreso", FuenteCabecera));
             tablaRegistro.addCell(Cabecera);        
             // Asignar cabecera
             tablaRegistro.setHeaderRows(1);
@@ -147,6 +159,7 @@ public class GenerarPDF {
             for(int i = 0; i < tablaProducto.size(); i++){
                 Producto producto = (Producto) tablaProducto.get(i);
                 PdfPCell Cuerpo = new PdfPCell();
+                Cuerpo.setBackgroundColor(BaseColor.WHITE);
                 Cuerpo.setHorizontalAlignment(Element.ALIGN_CENTER);
                 Cuerpo.setPhrase(new Paragraph(producto.getNom_producto(),FuenteSubtitulo));
                 tablaRegistro.addCell(Cuerpo);
@@ -193,34 +206,36 @@ public class GenerarPDF {
             documento.addSubject("muricion");
             documento.addTitle("ProyectoFinal");
             //se crea una pagina :3 
-            Paragraph titulo = new Paragraph(new Phrase("Registros de Usuarios", FuenteSubtitulo));
-            
+            Paragraph titulo = new Paragraph(new Phrase("Registros de Usuarios", FuenteTitulos));
+
             // Alinear
             titulo.setAlignment(Chunk.ALIGN_CENTER);
+            // Se agrega al documento
+            documento.add(titulo);
             PdfPTable tablaRegistro = new PdfPTable(10);
             // Definir cabecera
             PdfPCell Cabecera = new PdfPCell();
             Cabecera.setHorizontalAlignment(Element.ALIGN_CENTER);
-            Cabecera.setBackgroundColor(BaseColor.DARK_GRAY);
-            Cabecera.setPhrase(new Paragraph("Nombre", FuenteMiniHormiga));
+            Cabecera.setBackgroundColor(BaseColor.BLACK);
+            Cabecera.setPhrase(new Paragraph("Nombre", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Apellido", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Apellido", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Correo", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Correo", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Usuario", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Usuario", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Clave", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Clave", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Tipo", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Tipo", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Estado", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Estado", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Pregunta", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Pregunta", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Respuesta", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Respuesta", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
-            Cabecera.setPhrase(new Paragraph("Fecha Registro", FuenteMiniHormiga));
+            Cabecera.setPhrase(new Paragraph("Fecha Registro", FuenteHormiga));
             tablaRegistro.addCell(Cabecera);
 
             // Asignar cabecera
@@ -228,7 +243,9 @@ public class GenerarPDF {
             // Rellenar
             for(int i = 0; i < tablaUsuario.size(); i++){
                 Usuarios usuario = (Usuarios) tablaUsuario.get(i);
+
                 PdfPCell Cuerpo = new PdfPCell();
+                Cuerpo.setBackgroundColor(BaseColor.WHITE);
                 Cuerpo.setHorizontalAlignment(Element.ALIGN_CENTER);
                 Cuerpo.setPhrase(new Paragraph(usuario.getNombre(),FuenteMiniHormiga));
                 tablaRegistro.addCell(Cuerpo);
