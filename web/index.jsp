@@ -10,22 +10,22 @@
     <body>
         
         <div class="container col-lg-3">
-            <form action="Controlador">
+            <form action="Login" method="POST" >
                 <div class="from-goup text-center">
                     <img src="img/1.jpg" height="80" width="80"/>
                     <p><strong>Bienvenidos a Sistema Login</strong></p>
                 </div>
                 <div class="form-group">
-                <label>Nombre:</label>
-                <input class="form-control" type="text" name="txtnom" placeholder="Ingrece Nombres"> 
+                <label>Correo:</label>
+                <input class="form-control" type="email" name="txtCorreo" placeholder="Ingrece su Correo"> 
                </div>
         <div class="form-group">
-            <label>Email:</label>
-            <input type="email" name="txtCorreo" placeholder="exampleQgmail.com" class="form-control">
+            <label>Contraseña:</label>
+            <input type="password" name="txtPass" placeholder="Ingrese su Contraseña" class="form-control">
         </div>
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
-        <a href="Usuario?opcion=crear">Crear Cuenta</a>       <a href="">Restaurar Contraseña</a>
+        <a href="Usuario?opcion=crear">Crear Cuenta</a>       / <a href="">Restaurar Contraseña</a>
                 
             </form>
             
