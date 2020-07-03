@@ -128,7 +128,7 @@ fecha_registro_u = Usuario.getFecha_registro();
       <div class="form-group">
             <label for="txtFechUsuario" class="col-sm-2 control-label">Fecha de registro:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="txtFechUsuario" value="<%= fecha_registro_u %>" required>
+                <input type="datetime-local" class="form-control" name="txtFechUsuario" value="<%= fecha_registro_u %>" required>
             </div>
         </div>
                 

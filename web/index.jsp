@@ -7,8 +7,8 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <title>Inicio de Sesion</title>
     </head>
-    <body>
-        
+    <body style="background:  #FAF0E6">
+        <br><br><br><br>
         <div class="container col-lg-3">
             <form action="Controlador">
                 <div class="from-goup text-center">
@@ -17,16 +17,18 @@
                 </div>
                 <div class="form-group">
                 <label>Nombre:</label>
-                <input class="form-control" type="text" name="txtnom" placeholder="Ingrece Nombres"> 
+                <input class="form-control" type="text" name="txtnom" placeholder="Ingrese Nombre" required=""> 
                </div>
         <div class="form-group">
             <label>Email:</label>
-            <input type="email" name="txtCorreo" placeholder="exampleQgmail.com" class="form-control">
+            <input type="email" name="txtCorreo" placeholder="example@gmail.com" class="form-control" required="">
         </div>
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
-        <a href="Usuario?opcion=crear">Crear Cuenta</a>       <a href="">Restaurar Contraseña</a>
-                
+                <center>
+        <a href="Usuario?opcion=crear">Crear Cuenta</a>     
+        <br><a href="">Restaurar Contraseña</a>
+                </center>
             </form>
             
         </div>

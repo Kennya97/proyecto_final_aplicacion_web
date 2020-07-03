@@ -24,7 +24,7 @@
 
     
  <!-- Vistar parciales de la parte superior de nuestra aplicación -->
-<%@include file="WEB-INF/Vistas-Parciales/encabezado.jspf"%>
+<%@include file="WEB-INF/Vistas-Parciales/encabezado2.jspf"%>
          
         <div class="container mt-4">
             <h1>Bienvenid@ al Sistema <strong>${nombre}</strong> es un placer que estes con nosotros...</h1>

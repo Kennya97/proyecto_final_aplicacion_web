@@ -10,6 +10,7 @@ SISTEMA DE CONTROL DE INVENTARIO
 <a href="productos?opcion=listar" class="btn btn-default btn-sm" role="button">Productos</a>
 <a href="Usuario?opcion=listar" class="btn btn-default btn-sm" role="button">Usuarios</a>
 <a href="index2" class="btn btn-default btn-sm" role="button">Creadores</a>
+<a href="index" class="btn btn-default btn-sm" role="button">Cerrar Session</a>
         <style>
     .dropdown{
         top:-45px;
@@ -17,7 +18,7 @@ SISTEMA DE CONTROL DE INVENTARIO
     }
 </style>
 <div class="dropdown">
-                <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown">Cerrar Session</a>
+                
                 <div class="dropdown-menu text-center">
                     <a><img src="img/2.png" height="80" width="80"></a><br>
                     <a>${nombre}</a>
