@@ -1,9 +1,3 @@
-<%-- 
-    Document   : crearUsuario
-    Created on : 06-28-2020, 12:10:17 PM
-    Author     : ADMIN
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="Usuario" scope="session" class="Model.Usuarios" />
     <%

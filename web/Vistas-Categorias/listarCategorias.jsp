@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listarCategorias
-    Created on : 06-22-2020, 11:22:29 PM
-    Author     : castr
---%>
 <%@page import="Model.Categoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : listarUsuario
-    Created on : 06-28-2020, 11:14:23 AM
-    Author     : ADMIN
---%>
-
 <%@page import="Model.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="lista" scope="session" class="java.util.ArrayList"/>

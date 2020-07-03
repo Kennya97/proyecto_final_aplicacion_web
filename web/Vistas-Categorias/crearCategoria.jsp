@@ -1,9 +1,3 @@
-<%-- 
-    Document   : crearCategoria
-    Created on : 06-22-2020, 11:29:14 PM
-    Author     : castr
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
