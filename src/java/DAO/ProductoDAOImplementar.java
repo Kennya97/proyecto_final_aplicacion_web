@@ -131,6 +131,7 @@ public boolean guardarPro(Producto producto){
  
  try{
   // Condicional if else
+     System.out.println("Producto "+ producto.getId_producto());
      if(producto.getId_producto() == 0)
      {// Para cuando es un nuevo produto 
          
@@ -139,12 +140,16 @@ public boolean guardarPro(Producto producto){
          //Agregar una consulta SQL el ID_Producto es auntoincremento 
          
          //Aqui creo esta el poblema 
-         miSQL.append("INSERT INTO tb_producto(nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, fecha_entrada) VALUES(");
-         miSQL.append(producto.getNom_producto() + ", ").append(producto.getDes_producto() + ", ").append(producto.getStock() 
-                 + ", ").append(producto.getPrecio() + ", ").append(producto.getUnidadMedida() + ", ").append(producto.getEstado() 
-                 + ", ").append(producto.getCategoria_id() + ", ").append(producto.getFecha_entrada());
-         miSQL.append(";");
-         
+         miSQL.append("INSERT INTO tb_producto(nom_producto, des_producto, stock, precio, unidad_de_medida, estado_producto, categoria, fecha_entrada) VALUES ");
+         miSQL.append("('"+producto.getNom_producto()+ "', ");
+         miSQL.append("'"+producto.getDes_producto()+"', ");
+         miSQL.append(producto.getStock()+", ");
+         miSQL.append(producto.getPrecio()+", '");
+         miSQL.append(producto.getUnidadMedida()+"', ");
+         miSQL.append(producto.getEstado()+", ");
+         miSQL.append(producto.getCategoria_id()+", ");
+         miSQL.append("'"+producto.getFecha_entrada()+"');");
+         //(");");
          //Invocar metodo para ejecutar la consulta.
          this.conn.ejecutarSQL(miSQL.toString());
          System.out.println("Registro Guardado...");
@@ -206,7 +211,9 @@ this.conn.cerrarConexion();  //Cerrar la conexión.
        
 return borrar;
 }
-
+//Metodo de prueba
+//no funcional
+/*
     @Override
     public boolean guardarproduc(Producto producto) {
          boolean guardar = false;
@@ -240,6 +247,6 @@ return borrar;
        
         return guardar;
 
-    }
+    }   */
 }
     
