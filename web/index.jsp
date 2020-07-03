@@ -9,8 +9,6 @@
     </head>
     <body>
         
-        
-        
         <div class="container col-lg-3">
             <form action="Login" method="POST" >
                 <div class="from-goup text-center">
