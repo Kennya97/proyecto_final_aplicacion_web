@@ -33,6 +33,11 @@ response.sendRedirect("index.jsp");
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
+    <style>
+    body{
+        background-image: url("img/fondo2.jsp");
+    }
+   </style>
     <body>
         
        <title>Control de Inventario</title>

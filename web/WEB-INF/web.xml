@@ -32,6 +32,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>Controller.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Preguntasecret</servlet-name>
+        <servlet-class>Controller.Preguntasecret</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Preguntasecret</servlet-name>
+        <url-pattern>/Preguntasecret</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
