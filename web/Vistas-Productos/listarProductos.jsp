@@ -50,7 +50,6 @@ response.sendRedirect("index.jsp");
                     <div style="">
             <a href="<%= request.getContextPath() %>/productos?opcion=crear" class="btn bg-success btn-sm" role="button"> Nuevo Producto</a>
             <a href="<%= request.getContextPath() %>/ReportePDF?opcion=Productos" class="btn btn-info btn-group-sm" role="button">PDF</a>
-            
             <center>
             <h3>Listado de Productos Registrados</h3>
             </center>
@@ -99,6 +98,12 @@ response.sendRedirect("index.jsp");
             <input type="submit" class="btn btn-primary btn-sm glyphicon glyphicon-book" value=" Generar PDF" name="btnver"> 
         </form>
         ------->
+        
+        <div class="container">
+            <form name="reporte" action="../proyecto_final_aplicacion_web/Pdf">
+            <input type="submit" class="btn btn-primary btn-sm glyphicon glyphicon-book" value=" PDF de inventario general" name="btnver"> 
+            </form>
+            </div>
             </div>
         </div>
     </div>
