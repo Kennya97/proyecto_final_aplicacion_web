@@ -34,7 +34,7 @@
                 <input class="btn btn-danger btn-block" type="submit" name="accion" value="Ingresar"> 
                 <!--Nuevo cambio-->
                 <center>
-        <a href="http://localhost:8080/proyecto_final_aplicacion_web/CrearCuenta.jsp">Crear Cuenta</a>     
+        <a href="CrearCuenta.jsp">Crear Cuenta</a>     
         <br><a href="http://localhost:8080/proyecto_final_aplicacion_web/Recupera.jsp">Restaurar Contraseña</a>
                 </center>
             </form>
