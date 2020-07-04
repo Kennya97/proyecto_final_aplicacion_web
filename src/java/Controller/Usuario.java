@@ -101,6 +101,7 @@ public class Usuario extends HttpServlet {
         Usuarios us = new Usuarios();
 
 //Se efectua el casting o conversión de datos porque lo ingresado en el formulario es texto.
+        String redirigir = request.getParameter("cambio");
         String senal = request.getParameter("senal");
         int id = Integer.parseInt(request.getParameter("id_usuario"));
         String nombre = request.getParameter("txtNomUsuario");
@@ -131,9 +132,13 @@ public class Usuario extends HttpServlet {
         System.out.println("id " + us.getId());
 
          guardarUsuario.guardarUsu(us);   
-        
+        if(redirigir.equalsIgnoreCase("SI")){
+            response.sendRedirect("index.jsp");
+        }else{
+            
+            this.listaUsuarios(request, response);
+        }
 
-        this.listaUsuarios(request, response);
 
     }
 
