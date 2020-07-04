@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -19,8 +20,9 @@
        </style>
          <center>
         <h1>Registrar nueva cuenta!</h1>                     
-<form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="" method="post">
-<input type="hidden" name="id_usuario" value="" >
+<form class="form-horizontal" id="frmUsuario" name="frmUsuario" action="Usuario" method="post">
+<input type="hidden" name="id_usuario" value="0" >
+<input type="hidden" name="cambio" value="SI">
 <input type="hidden" name="senal" value="1">
 <div class="form-group">
 <label for="txtNomUsuario" class="col-sm-2 control-label">Nombre:</label>
@@ -92,21 +94,9 @@
         </div>
                 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-            <%
-                if(request.getParameter("senal")!=null){
-            %>
-
-            <input type="submit" class="btn btn-primary btn-sm" name="btnModificar" value="Actualizar" />
-            <%
- 
-            }else{   
-
-            %>    
+           
             <input type="submit" class="btn btn-success btn-sm" name="btnGuardar" value="Guardar" />
-            <%
-            }  
-            %> 
+      
             <input type="button" class="btn btn-info btn-sm" onclick="regresar('<%= request.getContextPath() %>/categorias?opcion=listar')" 
                 name="btnRegresar" value="Regresar" />
             </div>
