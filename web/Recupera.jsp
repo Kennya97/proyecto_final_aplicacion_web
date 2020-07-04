@@ -30,6 +30,7 @@
                 <input type="text" class="form-control" name="txtResUsuario" value="" required>
             </div>
         </div>
+            
 <br><br>
 
           <div class="form-group">
